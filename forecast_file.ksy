@@ -83,3 +83,28 @@ instances:
     type: laundry_index_table
     repeat: expr
     repeat-expr: laundry_index_entry_number
+  pollen_country_table:
+    pos: pollen_count_table_offset
+    type: pollen_count_table
+    repeat: expr
+    repeat-expr: pollen_count_entry_number
+  location_table:
+    pos: location_table_offset
+    type: location_table
+    repeat: expr
+    repeat-expr: location_entry_number
+types:
+  long_forecast_table:
+    seq:
+      - id: country_code
+        type: u1
+      - id: region_code
+        type: u1
+      - id: location_code
+        type: u1
+      - id: local_timestamp:
+        type: u4
+        doc: Timestamp is minutes since 2000.
+      - id: global_timestamp:
+        type: u4
+        doc: Timestamp is minutes since 2000.
