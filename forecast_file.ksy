@@ -445,3 +445,22 @@ types:
       - id: pollen_count
         type: u1
         doc: Only used for the Japanese version of this Channel.
+  weather_condition_codes_table:
+    seq:
+      - id: weather_icon_code_1
+        type: u2
+      - id: weather_icon_code_2
+        type: u2
+      - id: weather_text_offset
+        type: u4
+  uv_index_table:
+    seq:
+      - id: uv_index_code
+        type: u4le
+      - id: uv_index_text_offset
+        type: u4
+  laundry_index_table:
+    seq:
+      - id: laundry_index_code
+        type: u4le
+      - id: laundry_index_text_offset
