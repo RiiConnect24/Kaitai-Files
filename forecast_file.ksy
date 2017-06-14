@@ -102,9 +102,41 @@ types:
         type: u1
       - id: location_code
         type: u1
-      - id: local_timestamp:
+      - id: local_timestamp
         type: u4
         doc: Timestamp is minutes since 2000.
-      - id: global_timestamp:
+      - id: global_timestamp
         type: u4
         doc: Timestamp is minutes since 2000.
+      - id: unknown
+        type: u4
+      - id: today_forecast
+        type: u2
+      - id: today_6_hour_forecast_12am_6am
+        type: u2
+      - id: today_6_hour_forecast_6am_12pm
+        type: u2
+      - id: today_6_hour_forecast_12pm_6pm
+        type: u2
+      - id: today_6_hour_forecast_6pm_12am
+        type: u2
+      - id: today_high_temperature_celsius
+        type: s1
+      - id: today_high_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_low_temperature_celsius
+        type: s1
+      - id: today_low_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_high_temperature_fahrenheit
+        type: s1
+      - id: today_high_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_low_temperature_fahrenheit
+        type: s1
+      - id: today_low_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
