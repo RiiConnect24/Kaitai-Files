@@ -39,10 +39,10 @@ seq:
   - id: reserved
     size: 0xdc
   - id: title_booting
-    type: u1
+    type: u4
     doc: Normally set to zero when sysmenu creates this config file. Enables WC24 title booting when non-zero. KD can't change this field since the function that sets it isn't used, and sysmenu doesn't change this.
   - id: checksum
-    type: u1
+    type: u4
     doc: This is similar to the NANDBOOTINFO and state.dat checksums.
     
     
