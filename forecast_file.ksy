@@ -101,7 +101,7 @@ types:
       - id: region_code
         type: u1
       - id: location_code
-        type: u1
+        type: u2
       - id: local_timestamp
         type: u4
         doc: Timestamp is minutes since 2000.
@@ -331,3 +331,117 @@ types:
         doc: Only used for the Japanese version of this Channel.
       - id: padding_8
         type: u1
+  short_forecast_table:
+    seq:
+      - id: country_code
+        type: u1
+      - id: region_code
+        type: u1
+      - id: location_code
+        type: u2
+      - id: unknown
+        type: u4
+      - id: today_forecast
+        type: u2
+      - id: today_6_hour_forecast_12am_6am
+        type: u2
+      - id: today_6_hour_forecast_6am_12pm
+        type: u2
+      - id: today_6_hour_forecast_12pm_6pm
+        type: u2
+      - id: today_6_hour_forecast_6pm_12am
+        type: u2
+      - id: today_high_temperature_celsius
+        type: s1
+      - id: today_high_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_low_temperature_celsius
+        type: s1
+      - id: today_low_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_high_temperature_fahrenheit
+        type: s1
+      - id: today_high_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_low_temperature_fahrenheit
+        type: s1
+      - id: today_low_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_6_hour_precipitation_12am_6am
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_6_hour_precipitation_6am_12pm
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_6_hour_precipitation_12pm_6pm
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_6_hour_precipitation_6pm_12am
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_wind_direction
+        type: u1
+      - id: today_wind_speed_kilometers_per_hour
+        type: u1
+      - id: today_wind_speed_miles_per_hour
+        type: u1
+      - id: tomorrow_forecast
+        type: u2
+      - id: tomorrow_6_hour_forecast_12am_6am
+        type: u2
+      - id: tomorrow_6_hour_forecast_6am_12pm
+        type: u2
+      - id: tomorrow_6_hour_forecast_12pm_6pm
+        type: u2
+      - id: tomorrow_6_hour_forecast_6pm_12am
+        type: u2
+      - id: tomorrow_high_temperature_celsius
+        type: s1
+      - id: tomorrow_high_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_low_temperature_celsius
+        type: s1
+      - id: tomorrow_low_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_high_temperature_fahrenheit
+        type: s1
+      - id: tomorrow_high_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_low_temperature_fahrenheit
+        type: s1
+      - id: tomorrow_low_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_12am_6am
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_6am_12pm
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_12pm_6pm
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_6pm_12am
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_wind_direction
+        type: u1
+      - id: tomorrow_wind_speed_kilometers_per_hour
+        type: u1
+      - id: tomorrow_wind_speed_miles_per_hour
+        type: u1
+      - id: uv_index
+        type: u1
+      - id: laundry_index
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: pollen_count
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
