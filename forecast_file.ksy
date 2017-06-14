@@ -20,7 +20,7 @@ seq:
     type: u4le
   - id: language_code
     type: u1
-  - id: unknown
+  - id: unknown_1
     type: u1
   - id: unknown_2
     type: u1
@@ -168,3 +168,79 @@ types:
         type: u2
       - id: tomorrow_6_hour_forecast_6pm_12am
         type: u2
+      - id: tomorrow_high_temperature_celsius
+        type: s1
+      - id: tomorrow_high_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_low_temperature_celsius
+        type: s1
+      - id: tomorrow_low_temperature_celsius_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_high_temperature_fahrenheit
+        type: s1
+      - id: tomorrow_high_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_low_temperature_fahrenheit
+        type: s1
+      - id: tomorrow_low_temperature_fahrenheit_difference
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_12am_6am
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_6am_12pm
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_12pm_6pm
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_6_hour_precipitation_6pm_12am
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: tomorrow_wind_direction
+        type: u1
+      - id: tomorrow_wind_speed_kilometers_per_hour
+        type: u1
+      - id: tomorrow_wind_speed_miles_per_hour
+        type: u1
+      - id: uv_index
+        type: u1
+      - id: laundry_index
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: pollen_count
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_1
+        type: u1
+      - id: five_day_forecast_day_1
+        type: u2
+      - id: five_day_forecast_day_1_temperature_celsius_high
+        type: s1
+      - id: five_day_forecast_day_1_temperature_celsius_low
+        type: s1
+      - id: five_day_forecast_day_1_temperature_fahrenheit_high
+        type: s1
+      - id: five_day_forecast_day_1_temperature_fahrenheit_low
+        type: s1
+      - id: five_day_forecast_day_1_precipitation
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_2
+        type: u1
+      - id: five_day_forecast_day_2
+        type: u2
+      - id: five_day_forecast_day_2_temperature_celsius_high
+        type: s1
+      - id: five_day_forecast_day_2_temperature_celsius_low
+        type: s1
+      - id: five_day_forecast_day_2_temperature_fahrenheit_high
+        type: s1
+      - id: five_day_forecast_day_2_temperature_fahrenheit_low
+        type: s1
+      - id: five_day_forecast_day_2_precipitation
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
