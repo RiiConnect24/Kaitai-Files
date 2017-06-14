@@ -227,7 +227,7 @@ types:
       - id: five_day_forecast_day_1_temperature_fahrenheit_low
         type: s1
       - id: five_day_forecast_day_1_precipitation
-        type: s1
+        type: u1
         doc: Only used for the Japanese version of this Channel.
       - id: padding_2
         type: u1
@@ -242,5 +242,92 @@ types:
       - id: five_day_forecast_day_2_temperature_fahrenheit_low
         type: s1
       - id: five_day_forecast_day_2_precipitation
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_3
+        type: u1
+      - id: five_day_forecast_day_3
+        type: u2
+      - id: five_day_forecast_day_3_temperature_celsius_high
+        type: s1
+      - id: five_day_forecast_day_3_temperature_celsius_low
+        type: s1
+      - id: five_day_forecast_day_3_temperature_fahrenheit_high
+        type: s1
+      - id: five_day_forecast_day_3_temperature_fahrenheit_low
+        type: s1
+      - id: five_day_forecast_day_3_precipitation
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_4
+        type: u1
+      - id: five_day_forecast_day_4
+        type: u2
+      - id: five_day_forecast_day_4_temperature_celsius_high
+        type: s1
+      - id: five_day_forecast_day_4_temperature_celsius_low
+        type: s1
+      - id: five_day_forecast_day_4_temperature_fahrenheit_high
+        type: s1
+      - id: five_day_forecast_day_4_temperature_fahrenheit_low
+        type: s1
+      - id: five_day_forecast_day_4_precipitation
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_5
+        type: u1
+      - id: five_day_forecast_day_5
+        type: u2
+      - id: five_day_forecast_day_5_temperature_celsius_high
+        type: s1
+      - id: five_day_forecast_day_5_temperature_celsius_low
+        type: s1
+      - id: five_day_forecast_day_5_temperature_fahrenheit_high
+        type: s1
+      - id: five_day_forecast_day_5_temperature_fahrenheit_low
+        type: s1
+      - id: five_day_forecast_day_5_precipitation
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_6
+        type: u1
+      - id: five_day_forecast_day_6
+        type: u2
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_6_temperature_celsius_high
         type: s1
         doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_6_temperature_celsius_low
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_6_temperature_fahrenheit_high
+        type: s1
+        doc: Only used for the Japanese version of this Channel
+      - id: five_day_forecast_day_6_temperature_fahrenheit_low
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_6_precipitation
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_7
+        type: u1
+      - id: five_day_forecast_day_7
+        type: u2
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_7_temperature_celsius_high
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_7_temperature_celsius_low
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_7_temperature_fahrenheit_high
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_7_temperature_fahrenheit_low
+        type: s1
+        doc: Only used for the Japanese version of this Channel.
+      - id: five_day_forecast_day_7_precipitation
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: padding_8
+        type: u1
