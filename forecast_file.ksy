@@ -629,3 +629,21 @@ enums:
     4: spanish
     5: italian
     6: dutch
+  wind_direction:
+    0: none
+    1: nne
+    2: ne
+    3: ene
+    4: e
+    5: ese
+    6: se
+    7: sse
+    8: s
+    9: ssw
+    10: sw
+    11: wsw
+    12: w
+    13: wnw
+    14: nw
+    15: nnw
+    16: n
