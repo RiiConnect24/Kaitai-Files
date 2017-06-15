@@ -1,6 +1,7 @@
 meta:
   id: wc24pubk
   file-extension: mod
+  application: WiiConnect24
   endian: be
 seq:
   - id: rsa_public

@@ -1,6 +1,7 @@
 meta:
   id: iplsave
   file-extension: bin
+  application: Wii Menu
   endian: be
 seq:
   - id: magic
