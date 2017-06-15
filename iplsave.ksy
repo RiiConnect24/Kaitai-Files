@@ -16,18 +16,14 @@ seq:
     repeat-expr: unknown
   - id: entries
     type: entry
+    repeat: expr
+    repeat-expr: 48
   - id: unknown2
     type: u8
     repeat: expr
     repeat-expr: 32
   - id: md5_sum
     size: 16
-instances:
-  entries:
-    pos: 16
-    type: entry
-    repeat: expr
-    repeat-expr: 48
 types:
   entry:
     - id: channel_type
