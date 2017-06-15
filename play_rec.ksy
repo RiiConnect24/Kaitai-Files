@@ -14,7 +14,7 @@ types:
     - id: name
       type: str
       size: 40
-      encoding: UTF-16BE
+      encoding: utf-16be
     - id: pad1
       type: u4
     - id: ticks_boot
