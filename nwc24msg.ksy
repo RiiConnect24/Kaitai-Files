@@ -1,6 +1,8 @@
 meta:
   id: nwc24msg
-  file-extension: cfg
+  file-extension:
+    - cfg
+    - cbk
   endian: be
 seq:
   - id: magic
