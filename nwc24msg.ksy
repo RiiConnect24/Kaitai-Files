@@ -1,6 +1,6 @@
 meta:
   id: nwc24msg
-  file-extension: nwc24msg
+  file-extension: cfg
   endian: be
 seq:
   - id: magic
@@ -44,5 +44,3 @@ seq:
   - id: checksum
     type: u4
     doc: This is similar to the NANDBOOTINFO and state.dat checksums.
-    
-    
