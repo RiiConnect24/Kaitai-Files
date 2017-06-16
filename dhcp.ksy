@@ -4,16 +4,15 @@ meta:
   application: Wii Menu
   endian: be
 seq:
-  - id: ip_1
+  - id: connection_1_ip
     type: u1
     repeat: expr
     repeat-expr: 4
-    doc: Wii IP Address.
-  - id: ip_2
+  - id: connection_2_ip
     type: u1
     repeat: expr
     repeat-expr: 4
-  - id: ip_3
+  - id: connection_3_ip
     type: u1
     repeat: expr
     repeat-expr: 4
