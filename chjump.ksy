@@ -16,6 +16,9 @@ seq:
     doc: Seems to be 0.
   - id: titletype
     type: u4
+  - id: unknown3
+    type: u4
+    doc: Seems to be 32.
   - id: charstrlen
     type: u4
   - id: charstr
