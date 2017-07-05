@@ -7,15 +7,15 @@ meta:
 seq:
   - id: magic
     contents: "WcCf"
-  - id: unknown
+  - id: version
     type: u4
-    doc: Must always be 8
+    doc: As of an unknown IOS, must always be 8
   - id: wii_code
     type: u8be
-    doc: Kaitai cuts off the 0 at the front of the number, if applied, due to how it handles integers.
-  - id: id_generation
+    doc: Kaitai cuts off the 0 at the front of the number, if applicable, due to how it handles integers.
+  - id: id_creation
     type: u4
-    doc: Possible amount of regenerations of number?
+    doc: Amount of creations for this file
   - id: has_registered
     type: u4
     doc: 1 = ID is not registered yet, 2 = ID has been registered.
@@ -42,7 +42,9 @@ seq:
     size: 0xdc
   - id: title_booting
     type: u4
-    doc: Normally set to zero when Wii Menu creates this config file. Enables WC24 title booting when non-zero. KD can't change this field since the function that sets it isn't used, and sysmenu doesn't change this.
+    doc: Normally set to zero when Wii Menu creates this config file. Enables WC24 title booting when non-zero. KD can't change this field since the function that sets it 
+isn't used, and sysmenu doesn't change this.
   - id: checksum
     type: u4
     doc: This is similar to the NANDBOOTINFO and state.dat checksums.
+
