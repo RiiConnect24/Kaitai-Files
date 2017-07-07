@@ -229,6 +229,10 @@ types:
         terminator: 0x0000
   pictures_table:
     seq:
+      - id: credit_size
+        type: u4
+      - id: credit_offset
+        type: u4
       - id: caption_size
         type: u4
       - id: caption_offset
@@ -236,10 +240,6 @@ types:
       - id: picture_size
         type: u4
       - id: picture_offset
-        type: u4
-      - id: credit_size
-        type: u4
-      - id: credit_offset
         type: u4
     instances:
       caption:
