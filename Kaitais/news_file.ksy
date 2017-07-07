@@ -119,6 +119,7 @@ types:
         pos: topics_text_offset
         type: str
         encoding: utf-16be
+        terminator: 0x0000
       timestamps:
         pos: timestamps_offset
         type: timestamps
@@ -225,6 +226,7 @@ types:
         pos: location_text_offset
         type: str
         encoding: utf-16be
+        terminator: 0x0000
   pictures_table:
     seq:
       - id: caption_size
