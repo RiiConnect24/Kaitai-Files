@@ -100,6 +100,12 @@ types:
         type: u4
       - id: wii_menu_headline_offset
         type: u4
+    instances:
+      wii_menu_headline:
+        pos: wii_menu_headline_offset
+        type: str
+        encoding: utf-16be
+        size: wii_menu_headline_size
   topics_table:
     seq:
       - id: topics_text_offset
@@ -109,6 +115,10 @@ types:
       - id: timestamps_offset
         type: u4
     instances:
+      topics_text:
+        pos: topics_text_offset
+        type: str
+        encoding: utf-16be
       timestamps:
         pos: timestamps_offset
         type: timestamps
@@ -149,6 +159,17 @@ types:
         type: u4
       - id: article_offset
         type: u4
+    instances:
+      headline:
+        pos: headline_offset
+        type: str
+        encoding: utf-16be
+        size: headline_size
+      article:
+        pos: articles_offset
+        type: str
+        encoding: utf-16be
+        size: article_size
   source_table:
     seq:
       - id: source_logo
@@ -169,6 +190,20 @@ types:
         type: u4
       - id: source_copyright_offset
         type: u4
+    instances:
+      source_picture:
+        pos: source_picture_offset
+        size: source_picture_size
+      source_name:
+        pos: source_name_offset
+        type: str
+        encoding: utf-16be
+        size: source_name_size
+      source_copyright:
+        pos: source_copyright_offset
+        type: str
+        encoding: utf-16be
+        size: source_copyright_size
   locations_table:
     seq:
       - id: location_text_offset
@@ -185,20 +220,39 @@ types:
         type: u2
       - id: location_zoom
         type: u4le
+    instances:
+      location_text:
+        pos: location_text_offset
+        type: str
+        encoding: utf-16be
   pictures_table:
     seq:
-      - id: captions_size
+      - id: caption_size
         type: u4
-      - id: captions_offset
+      - id: caption_offset
         type: u4
-      - id: pictures_size
+      - id: picture_size
         type: u4
-      - id: pictures_offset
+      - id: picture_offset
         type: u4
-      - id: credits_size
+      - id: credit_size
         type: u4
-      - id: credits_size
+      - id: credit_offset
         type: u4
+    instances:
+      caption:
+        pos: caption_offset
+        type: str
+        encoding: utf-16be
+        size: caption_size
+      picture:
+        pos: picture_offset
+        size: picture_size
+      credit:
+        pos: credit_offset
+        type: str
+        encoding: utf-16be
+        size: credit_size
 enums:
   country_code:
     1: japan
