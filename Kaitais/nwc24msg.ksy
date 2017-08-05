@@ -42,9 +42,8 @@ seq:
     size: 0xdc
   - id: title_booting
     type: u4
-    doc: Normally set to zero when Wii Menu creates this config file. Enables WC24 title booting when non-zero. KD can't change this field since the function that sets it 
-isn't used, and sysmenu doesn't change this.
+    doc: Normally set to zero when Wii Menu creates this config file. Enables WC24 title booting when non-zero. KD cant change this field since the function that sets it 
+isnt used, and Wii Menu doesnt change this.
   - id: checksum
     type: u4
     doc: This is similar to the NANDBOOTINFO and state.dat checksums.
-
