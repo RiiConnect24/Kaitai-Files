@@ -41,6 +41,12 @@ types:
         type: u1
       - id: location_code
         type: u2
+      - id: opening_timestamp
+        type: u4
+        doc: Timestamp is minutes since 2000.
+      - id: closing_timestamp
+        type: u4
+        doc: Timestamp is minutes since 2000.
       - id: current_forecast
         type: u2
       - id: unknown
