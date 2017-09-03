@@ -158,6 +158,14 @@ types:
         type: u1
       - id: today_wind_speed_miles_per_hour
         type: u1
+      - id: today_uv_index
+        type: u1
+      - id: today_laundry_index
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
+      - id: today_pollen_count
+        type: u1
+        doc: Only used for the Japanese version of this Channel.
       - id: tomorrow_forecast
         type: u2
       - id: tomorrow_6_hour_forecast_12am_6am
@@ -206,14 +214,15 @@ types:
         type: u1
       - id: tomorrow_wind_speed_miles_per_hour
         type: u1
-      - id: uv_index
+      - id: tomorrow_uv_index
         type: u1
-      - id: laundry_index
+        doc: Unused.
+      - id: tomorrow_laundry_index
         type: u1
-        doc: Only used for the Japanese version of this Channel.
-      - id: pollen_count
+        doc: Only used for the Japanese version of this Channel. Unused.
+      - id: tomorrow_pollen_count
         type: u1
-        doc: Only used for the Japanese version of this Channel.
+        doc: Only used for the Japanese version of this Channel. Unused.
       - id: padding_1
         type: u1
       - id: five_day_forecast_day_1
@@ -437,12 +446,12 @@ types:
         type: u1
       - id: tomorrow_wind_speed_miles_per_hour
         type: u1
-      - id: uv_index
+      - id: today_uv_index
         type: u1
-      - id: laundry_index
+      - id: today_laundry_index
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: pollen_count
+      - id: today_pollen_count
         type: u1
         doc: Only used for the Japanese version of this Channel.
   weather_condition_codes_table:
