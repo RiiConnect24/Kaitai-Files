@@ -223,8 +223,6 @@ types:
       - id: tomorrow_pollen_count
         type: u1
         doc: Only used for the Japanese version of this Channel. Unused.
-      - id: padding_1
-        type: u1
       - id: five_day_forecast_day_1
         type: u2
       - id: five_day_forecast_day_1_temperature_celsius_high
@@ -238,7 +236,7 @@ types:
       - id: five_day_forecast_day_1_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_2
+      - id: five_day_forecast_day_1_padding
         type: u1
       - id: five_day_forecast_day_2
         type: u2
@@ -253,7 +251,7 @@ types:
       - id: five_day_forecast_day_2_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_3
+      - id: five_day_forecast_day_2_padding
         type: u1
       - id: five_day_forecast_day_3
         type: u2
@@ -268,7 +266,7 @@ types:
       - id: five_day_forecast_day_3_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_4
+      - id: five_day_forecast_day_3_padding
         type: u1
       - id: five_day_forecast_day_4
         type: u2
@@ -283,7 +281,7 @@ types:
       - id: five_day_forecast_day_4_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_5
+      - id: five_day_forecast_day_4_padding
         type: u1
       - id: five_day_forecast_day_5
         type: u2
@@ -298,7 +296,7 @@ types:
       - id: five_day_forecast_day_5_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_6
+      - id: five_day_forecast_day_5_padding
         type: u1
       - id: five_day_forecast_day_6
         type: u2
@@ -318,7 +316,7 @@ types:
       - id: five_day_forecast_day_6_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_7
+      - id: five_day_forecast_day_6_padding
         type: u1
       - id: five_day_forecast_day_7
         type: u2
@@ -338,7 +336,7 @@ types:
       - id: five_day_forecast_day_7_precipitation
         type: u1
         doc: Only used for the Japanese version of this Channel.
-      - id: padding_8
+      - id: five_day_forecast_day_7_padding
         type: u1
   short_forecast_table:
     seq:
@@ -348,7 +346,13 @@ types:
         type: u1
       - id: location_code
         type: u2
-      - id: unknown
+      - id: local_timestamp
+        type: u4
+        doc: Timestamp is minutes since 2000.
+      - id: global_timestamp
+        type: u4
+        doc: Timestamp is minutes since 2000.
+      - id: unknown_1
         type: u4
       - id: today_forecast
         type: u2
@@ -397,6 +401,12 @@ types:
       - id: today_wind_speed_kilometers_per_hour
         type: u1
       - id: today_wind_speed_miles_per_hour
+        type: u1
+      - id: unknown_2
+        type: u1
+      - id: unknown_3
+        type: u1
+      - id: unknown_4
         type: u1
       - id: tomorrow_forecast
         type: u2
