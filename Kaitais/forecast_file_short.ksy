@@ -1,5 +1,5 @@
 meta:
-  id: forecast_short_file
+  id: forecast_file_short
   application: Forecast Channel
   endian: be
 seq:
