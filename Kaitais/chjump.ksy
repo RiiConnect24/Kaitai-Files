@@ -5,7 +5,9 @@ meta:
   endian: be
 seq:
   - id: magic
-    contents: "ChJp"
+    size: 4
+    type: str
+    encoding: utf-8
   - id: filesize
     type: u4
   - id: unknown
@@ -16,6 +18,10 @@ seq:
     doc: Seems to be 0.
   - id: titletype
     type: u4
+  - id: titleid
+    size: 4
+    type: str
+    encoding: utf-8
   - id: unknown3
     type: u4
     doc: Seems to be 32.
