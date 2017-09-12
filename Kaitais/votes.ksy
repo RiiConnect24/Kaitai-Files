@@ -1,5 +1,5 @@
 meta:
-  id: voting
+  id: votes
   file-extension: bin
   application: Everybody Votes Channel
   endian: be
