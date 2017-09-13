@@ -107,8 +107,10 @@ types:
     seq:
       - id: poll_id
         type: u4
-      - id: poll_category
-        type: u2
+      - id: poll_category_1
+        type: u1
+      - id: poll_category_2
+        type: u1
       - id: opening_timestamp
         type: u4
       - id: closing_timestamp
@@ -122,9 +124,9 @@ types:
       - id: poll_id
         type: u4
       - id: poll_category_1
-        type: u2
+        type: u1
       - id: poll_category_2
-        type: u2
+        type: u1
       - id: opening_timestamp
         type: u4
       - id: closing_timestamp
