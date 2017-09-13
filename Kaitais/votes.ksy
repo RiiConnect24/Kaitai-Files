@@ -159,7 +159,7 @@ types:
         type: u4
       - id: inaccurate_prediction_voters_num
         type: u4
-      - id: unknown
+      - id: detailed_results_flag
         type: u2
       - id: national_result_detailed_table_count
         type: u1
