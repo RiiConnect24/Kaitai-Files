@@ -107,9 +107,8 @@ types:
     seq:
       - id: poll_id
         type: u4
-      - id: unknown
+      - id: poll_category
         type: u2
-        doc: Question ID?
       - id: opening_timestamp
         type: u4
       - id: closing_timestamp
@@ -122,9 +121,10 @@ types:
     seq:
       - id: poll_id
         type: u4
-      - id: unknown
+      - id: poll_category_1
         type: u2
-        doc: Question ID?
+      - id: poll_category_2
+        type: u2
       - id: opening_timestamp
         type: u4
       - id: closing_timestamp
@@ -233,3 +233,5 @@ enums:
       4: spanish
       5: italian
       6: dutch
+    poll_category:
+      0: thoughts
