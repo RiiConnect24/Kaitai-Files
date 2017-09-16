@@ -3,7 +3,7 @@ meta:
   file-extension: bin
   application: Everybody Votes Channel
   endian: be
-  seq:
+seq:
     - id: version
       type: u4
     - id: filesize
