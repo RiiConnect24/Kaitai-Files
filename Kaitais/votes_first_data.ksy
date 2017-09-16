@@ -176,11 +176,3 @@ enums:
     4: spanish
     5: italian
     6: dutch
-language_code:
-  0: japanese
-  1: english
-  2: german
-  3: french
-  4: spanish
-  5: italian
-  6: dutch
