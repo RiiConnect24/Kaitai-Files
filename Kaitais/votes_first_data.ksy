@@ -4,31 +4,29 @@ meta:
   application: Everybody Votes Channel
   endian: be
 seq:
-    - id: version
-      type: u4
-    - id: filesize
-      type: u4
-    - id: crc32
-      type: u4
-    - id: country_entry_number
-      type: u1
-    - id: country_table_offset
-      type: u4
-    - id: language_entry_number
-      type: u1
-    - id: language_table_offset
-      type: u4
+  - id: version
+    type: u4
+  - id: filesize
+    type: u4
+  - id: crc32
+    type: u4
+  - id: country_entry_number
+    type: u1
+  - id: country_table_offset
+    type: u4
+  - id: language_entry_number
+    type: u1
 instances:
+  language_table:
+    pos: language_entry_number + 1
+    type: language_table
+    repeat: expr
+    repeat-expr: language_entry_number
   country_table:
     pos: country_table_offset
     type: country_table
     repeat: expr
     repeat-expr: country_entry_number
-  language_table:
-    pos: language_table_offset
-    type: language_table
-    repeat: expr
-    repeat-expr: language_entry_number
 types:
   language_table:
     seq:
