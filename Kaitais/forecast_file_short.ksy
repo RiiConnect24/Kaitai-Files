@@ -5,13 +5,17 @@ meta:
 seq:
   - id: version
     type: u4
-  - id: version
-    type: u4
     doc: Always 0.
   - id: filesize
     type: u4
   - id: crc32
     type: u4
+  - id: opening_timestamp
+    type: u4
+    doc: Timestamp is minutes since 2000.
+  - id: closing_timestamp
+    type: u4
+    doc: Timestamp is minutes since 2000.
   - id: country_code
     type: u4le
   - id: language_code
@@ -25,7 +29,7 @@ seq:
   - id: current_forecast_entry_number
     type: u4
   - id: current_forecast_table_offset
-    repeat: expr
+    type: u4
 instances:
   current_forecast_table:
     pos: current_forecast_table_offset
