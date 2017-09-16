@@ -31,17 +31,19 @@ instances:
     repeat-expr: language_entry_number
 types:
   country_table:
-    - id: country_code
-      type: u1
-    - id: language_number
-      type: u1
-    - id: languages
-      type: u1
-      repeat: expr
-      repeat-expr: 4
+    seq:
+      - id: country_code
+        type: u1
+      - id: language_number
+        type: u1
+      - id: languages
+        type: u1
+        repeat: expr
+        repeat-expr: 4
   language_table:
-    - id: language_text_offset
-      type: u4
+    seq:
+      - id: language_text_offset
+        type: u4
 enums:
   country_code:
     1: japan
