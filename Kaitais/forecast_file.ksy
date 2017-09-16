@@ -1,5 +1,6 @@
 meta:
   id: forecast_file
+  file-extension: bin
   application: Forecast Channel
   endian: be
 seq:
