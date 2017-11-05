@@ -236,4 +236,8 @@ enums:
       5: italian
       6: dutch
     poll_category:
-      0: thoughts
+      0: personality
+      1: thoughts
+      2: surroundings
+      3: experience
+      4: knowledge
