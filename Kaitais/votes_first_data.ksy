@@ -18,7 +18,7 @@ seq:
     type: u1
 instances:
   language_table:
-    pos: language_entry_number + 1
+    pos: 0x12
     type: language_table
     repeat: expr
     repeat-expr: language_entry_number
@@ -176,3 +176,5 @@ enums:
     4: spanish
     5: italian
     6: dutch
+    7: portuguese
+    8: french_canada
