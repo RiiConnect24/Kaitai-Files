@@ -235,6 +235,8 @@ enums:
       4: spanish
       5: italian
       6: dutch
+      7: portuguese
+      8: french_canada
     poll_category:
       0: personality
       1: thoughts
