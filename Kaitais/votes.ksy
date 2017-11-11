@@ -20,9 +20,9 @@ seq:
     type: u1
   - id: result_version
     type: u1
-  - id: nqen_entry_number
+  - id: national_question_entry_number
     type: u1
-  - id: nqen_header_offset
+  - id: national_question_table_offset
     type: u4
   - id: worldwide_question_num
     type: u1
@@ -58,10 +58,10 @@ seq:
     type: u4
 instances:
     national_question_table:
-      pos: nqen_header_offset
+      pos: national_question_table_offset
       type: national_question_table
       repeat: expr
-      repeat-expr: nqen_entry_number
+      repeat-expr: national_question_entry_number
     worldwide_question_table:
       pos: worldwide_question_offset
       type: worldwide_question_table
