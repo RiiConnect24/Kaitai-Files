@@ -223,7 +223,7 @@ types:
   country_name_table:
     seq:
       - id: language_code
-        type: u4
+        type: u1
       - id: text_offset
         type: u4
 enums:
