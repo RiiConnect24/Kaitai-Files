@@ -238,8 +238,8 @@ enums:
       7: portuguese
       8: french_canada
     poll_category:
-      0: personality
-      1: thoughts
+      0: thoughts
+      1: personality
       2: surroundings
       3: experience
       4: knowledge
