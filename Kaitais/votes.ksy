@@ -157,9 +157,9 @@ types:
         type: u4
       - id: female_voters_response_2_num
         type: u4
-      - id: accurate_prediction_voters_num
+      - id: predictors_response_1_num
         type: u4
-      - id: inaccurate_prediction_voters_num
+      - id: predictors_response_2_num
         type: u4
       - id: detailed_results_flag
         type: u2
