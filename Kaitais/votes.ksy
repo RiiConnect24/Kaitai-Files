@@ -161,8 +161,10 @@ types:
         type: u4
       - id: predictors_response_2_num
         type: u4
+      - id: show_voter_number_flag
+        type: u1
       - id: detailed_results_flag
-        type: u2
+        type: u1
       - id: national_result_detailed_table_count
         type: u1
       - id: starting_national_result_detailed_table_number
