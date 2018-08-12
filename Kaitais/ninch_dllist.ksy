@@ -1,8 +1,8 @@
 meta:
   id: ninch_dllist
   file-extension:
-    - lz
     - bin
+    - LZ
   endian: be
 seq:
   - id: unknown
@@ -25,7 +25,7 @@ seq:
   - id: language_code
     type: u4
   - id: unknown_2
-    type: u8
+    type: u1
     repeat: expr
     repeat-expr: 9
   - id: ratings_entry_number
@@ -44,26 +44,34 @@ seq:
     type: u4
   - id: title_table_offset
     type: u4
-  - id: unknown_3
+  - id: new_title_entry_number
     type: u4
-    repeat: expr
-    repeat-expr: 2
+  - id: new_title_table_offset
+    type: u4
   - id: videos_1_entry_number
     type: u4
   - id: videos_1_table_offset
     type: u4
-  - id: unknown_4
+  - id: new_video_entry_number
     type: u4
-    repeat: expr
-    repeat_expr: 2
+  - id: new_video_table_offset
+    type: u4
   - id: demos_entry_number
     type: u4
   - id: demos_table_offset
     type: u4
   - id: unknown_5
+    type: u4
+  - id: unknown_6
+    type: u4
+  - id: recommendations_entry_number
+    type: u4
+  - id: recommendations_table_offset
+    type: u4
+  - id: unknown_7
     type: u1
     repeat: expr
-    repeat-expr: 32
+    repeat-expr: 16
   - id: videos_2_entry_number
     type: u4
   - id: videos_2_table_offset
@@ -93,16 +101,31 @@ instances:
     type: title_table
     repeat: expr
     repeat-expr: title_entry_number
+  new_title_table:
+    pos: new_title_table_offset
+    type: new_title_table
+    repeat: expr
+    repeat-expr: new_title_entry_number
   videos_1_table:
     pos: videos_1_table_offset
     type: videos_1_table
     repeat: expr
     repeat-expr: videos_1_entry_number
+  new_video_table:
+    pos: new_video_table_offset
+    type: new_video_table
+    repeat: expr
+    repeat-expr: new_video_entry_number
   demos_table:
     pos: demos_table_offset
     type: demos_table
     repeat: expr
-    repeat-expr: demos_table_entry_number
+    repeat-expr: demos_entry_number
+  recommendations_table:
+    pos: recommendations_table_offset
+    type: recommendations_table
+    repeat: expr
+    repeat-expr: recommendations_entry_number
   videos_2_table:
     pos: videos_2_table_offset
     type: videos_2_table
@@ -116,7 +139,7 @@ instances:
 types:
   ratings_table:
     seq:
-      - id: ratingID
+      - id: rating_id
         type: u1
       - id: unknown
         type: u1
@@ -146,7 +169,7 @@ types:
       - id: title
         type: str
         encoding: utf-16be
-        size: 51
+        size: 102
       - id: group_id
         type: u1
       - id: unknown
@@ -159,17 +182,19 @@ types:
       - id: dev_title
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
       - id: pub_title
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
   title_table:
     seq:
       - id: id
         type: u4
       - id: title_id
-        type: u4
+        type: str
+        encoding: utf-8
+        size: 4
       - id: title_type
         type: u1
       - id: unknown
@@ -189,15 +214,19 @@ types:
       - id: title
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
       - id: subtitle
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
       - id: short_title
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
+  new_title_table:
+    seq:
+      - id: title_offset
+        type: u4
   videos_1_table:
     seq:
       - id: id
@@ -231,6 +260,24 @@ types:
         type: str
         encoding: utf-16be
         size: 123
+  new_video_table:
+    seq:
+      - id: id
+        type: u4
+        doc: Decimal ID for URL filename.
+      - id: unknown
+        type: u2
+        doc: Time length?
+      - id: title_id
+        type: u4
+      - id: unknown_2
+        type: u1
+        repeat: expr
+        repeat-expr: 18
+      - id: title
+        type: str
+        encoding: utf-16be
+        size: 204
   demos_table:
     seq:
       - id: id
@@ -238,11 +285,11 @@ types:
       - id: title
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
       - id: subtitle
         type: str
         encoding: utf-16be
-        size: 31
+        size: 62
         doc: Optional.
       - id: titleid
         type: u4
@@ -264,7 +311,11 @@ types:
       - id: unknown_2
         type: u1
         repeat: expr
-        repeat-expr: 20
+        repeat-expr: 205
+  recommendations_table:
+    seq:
+      - id: title_offset
+        type: u4
   videos_2_table:
     seq:
       - id: id
@@ -278,11 +329,11 @@ types:
       - id: unknown_2
         type: u1
         repeat: expr
-        repeat-expr: 20
+        repeat-expr: 32
       - id: title
         type: str
         encoding: utf-16be
-        size: 102
+        size: 192
   detailed_ratings_table:
     seq:
       - id: rating_group
