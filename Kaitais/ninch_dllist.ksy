@@ -151,12 +151,12 @@ types:
       - id: jpeg_offset
         type: u4
         doc: Offset for a picture of this rating.
-      - id: unknown3
+      - id: jpeg_size
         type: u4
       - id: title
         type: str
         encoding: utf-16be
-        size: 11
+        size: 22
   title_types_table:
     seq:
       - id: type_id
@@ -259,7 +259,7 @@ types:
       - id: title
         type: str
         encoding: utf-16be
-        size: 123
+        size: 246
   new_video_table:
     seq:
       - id: id
