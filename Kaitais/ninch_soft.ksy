@@ -23,7 +23,7 @@ seq:
     type: u4
   - id: ratings_table_offset
     type: u4
-  - id: unknown_offset
+  - id: times_played_offset
     type: u4
   - id: recommendations_entry_number
     type: u4
@@ -159,14 +159,42 @@ seq:
     encoding: utf-16
   - id: genre
     type: str
-    size: 64
+    size: 58
+    encoding: utf-16
+  - id: players
+    type: str
+    size: 62
+    encoding: utf-16
+  - id: peripherals
+    type: str
+    size: 108
     encoding: utf-16
   - id: unknown_26
     type: str
-    size: 60
+    size: 80
+    encoding: utf-16
+  - id: disclaimer
+    type: str
+    size: 4800
     encoding: utf-16
 instances:
+  times_played_table:
+    pos: times_played_offset
+    type: times_played_table
 types:
+  times_played_table:
+    seq:
+      - id: time_spent_playing_total
+        type: u4
+        doc: In hours.
+      - id: time_spent_playing_per_person
+        type: u4
+        doc: In minutes.
+      - id: times_played_total
+        type: u4
+      - id: times_played_per_person
+        type: u4
+        doc: Will be multiplied by 0.01.
 enums:
   platforms:
     0: none
