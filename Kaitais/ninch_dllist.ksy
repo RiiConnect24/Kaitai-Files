@@ -136,6 +136,7 @@ instances:
     type: detailed_ratings_table
     repeat: expr
     repeat-expr: detailed_ratings_entry_number
+    
 types:
   ratings_table:
     seq:
@@ -200,9 +201,9 @@ types:
       - id: unknown
         type: u1
       - id: unknown_2
-        type: u4
-      - id: company_offset
         type: u2
+      - id: company_offset
+        type: u4
       - id: release_date
         type: u4
       - id: rating_id
@@ -223,10 +224,18 @@ types:
         type: str
         encoding: utf-16be
         size: 62
+    instances:
+      company_entry:
+        pos: company_offset
+        type: company_table
   new_title_table:
     seq:
-      - id: title_offset
+      - id: new_title_offset
         type: u4
+    instances:
+      new_title_entry:
+        pos: new_title_offset
+        type: title_table
   videos_1_table:
     seq:
       - id: id
@@ -295,8 +304,14 @@ types:
         type: u4
       - id: company_offset
         type: u4
-      - id: removal_timestamp
-        type: u4
+      - id: removal_year
+        type: u2
+        doc: Null when there's no end of distribution date.
+      - id: removal_month
+        type: u1
+        doc: Null when there's no end of distribution date.
+      - id: removal_day
+        type: u1
         doc: Null when there's no end of distribution date.
       - id: unknown
         type: u4
@@ -312,10 +327,18 @@ types:
         type: u1
         repeat: expr
         repeat-expr: 205
+    instances:
+      company_entry:
+        pos: company_offset
+        type: company_table
   recommendations_table:
     seq:
-      - id: title_offset
+      - id: recommendation_title_offset
         type: u4
+    instances:
+      recommendation_title_entry:
+        pos: recommendation_title_offset
+        type: title_table
   videos_2_table:
     seq:
       - id: id
