@@ -47,9 +47,9 @@ seq:
     type: u4
   - id: unknown_4
     type: u4
-  - id: esrb_picture_offset
+  - id: rating_picture_offset
     type: u4
-  - id: esrb_picture_size
+  - id: rating_picture_size
     type: u4
   - id: unknown_5
     type: u4
@@ -70,9 +70,9 @@ seq:
     type: u2
   - id: unknown_8
     type: u1
-  - id: unknown_9
+  - id: wii_shop_channel_button_flag
     type: u1
-  - id: unknown_10
+  - id: purchase_button_flag
     type: u1
   - id: release_year
     type: u2
@@ -99,15 +99,15 @@ seq:
     type: u1
   - id: online_flag
     type: u1
-  - id: unknown_12
+  - id: wiiconnect24_flag
     type: u1
   - id: nintendo_wifi_connection_flag
     type: u1
-  - id: unknown_13
+  - id: downloadable_content_flag
     type: u1
-  - id: unknown_14
+  - id: wp_flag
     type: u1
-  - id: unknown_15
+  - id: dl_flag
     type: u1
   - id: touch_generations_flag
     type: u1
@@ -149,23 +149,23 @@ seq:
     type: u1
   - id: unknown_25
     type: u1
-  - id: title
+  - id: title_text
     type: str
     size: 186
     encoding: utf-16
-  - id: description
+  - id: description_text
     type: str
     size: 246
     encoding: utf-16
-  - id: genre
+  - id: genre_text
     type: str
     size: 58
     encoding: utf-16
-  - id: players
+  - id: players_text
     type: str
     size: 62
     encoding: utf-16
-  - id: peripherals
+  - id: peripherals_text
     type: str
     size: 108
     encoding: utf-16
@@ -173,10 +173,26 @@ seq:
     type: str
     size: 80
     encoding: utf-16
-  - id: disclaimer
+  - id: disclaimer_text
     type: str
     size: 4800
     encoding: utf-16
+  - id: unknown_27
+    type: u1
+  - id: distribution_date_text
+    type: str
+    size: 82
+    encoding: utt-16
+  - id: wii_points_text
+    type: str
+    size: 82
+    encoding: utf-16
+  - id: custom_field_text
+    type: str
+    size: 82
+    encoding: utf-16
+    repeat: expr
+    repeat-expr: 10
 instances:
   times_played_table:
     pos: times_played_offset
