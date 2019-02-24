@@ -105,9 +105,9 @@ seq:
     type: u1
   - id: downloadable_content_flag
     type: u1
-  - id: wp_flag
+  - id: wireless_play_flag
     type: u1
-  - id: dl_flag
+  - id: download_play_flag
     type: u1
   - id: touch_generations_flag
     type: u1
