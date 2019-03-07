@@ -69,9 +69,9 @@ seq:
   - id: recommendations_table_offset
     type: u4
   - id: unknown_7
-    type: u1
+    type: u4
     repeat: expr
-    repeat-expr: 16
+    repeat-expr: 8
   - id: videos_2_entry_number
     type: u4
   - id: videos_2_table_offset
@@ -80,6 +80,10 @@ seq:
     type: u4
   - id: detailed_ratings_table_offset
     type: u4
+  - id: last_update
+    type: str
+    encoding: utf-16be
+    size: 62
 instances:
   ratings_table:
     pos: ratings_table_offset
