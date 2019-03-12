@@ -84,6 +84,17 @@ seq:
     type: str
     encoding: utf-16be
     size: 62
+  - id: unknown_8
+    type: u1
+    repeat: expr
+    repeat-expr: 3
+  - id: dl_url_ids
+    type: str
+    repeat: expr
+    repeat-expr: 5
+    size: 256
+    encoding: utf-8
+    doc: Part of the path in the URL for the Nintendo Channel files.
 instances:
   ratings_table:
     pos: ratings_table_offset
@@ -208,8 +219,15 @@ types:
         type: u2
       - id: company_offset
         type: u4
-      - id: release_date
-        type: u4
+      - id: release_date_year
+        type: u2
+        doc: Null when there's no release date.
+      - id: release_date_month
+        type: u1
+        doc: Null when there's no release date.
+      - id: release_date_day
+        type: u1
+        doc: Null when there's no release date.
       - id: rating_id
         type: u1
       - id: unknown_4
@@ -356,11 +374,11 @@ types:
       - id: unknown_2
         type: u1
         repeat: expr
-        repeat-expr: 32
+        repeat-expr: 20
       - id: title
         type: str
         encoding: utf-16be
-        size: 192
+        size: 204
   detailed_ratings_table:
     seq:
       - id: rating_group
