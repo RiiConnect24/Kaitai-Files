@@ -60,6 +60,7 @@ seq:
   - id: game_id
     type: str
     size: 4
+    encoding: utf-8
   - id: platform_flag
     type: u1
   - id: company_id
@@ -82,7 +83,7 @@ seq:
     type: u1
   - id: wii_points
     type: u4
-    notes: Null if none. 
+    doc: Null if none. 
   - id: unknown_11
     type: u1
     repeat: expr
@@ -152,45 +153,45 @@ seq:
   - id: title_text
     type: str
     size: 186
-    encoding: utf-16
+    encoding: utf-16be
   - id: description_text
     type: str
     size: 246
-    encoding: utf-16
+    encoding: utf-16be
   - id: genre_text
     type: str
     size: 58
-    encoding: utf-16
+    encoding: utf-16be
   - id: players_text
     type: str
     size: 62
-    encoding: utf-16
+    encoding: utf-16be
   - id: peripherals_text
     type: str
     size: 108
-    encoding: utf-16
+    encoding: utf-16be
   - id: unknown_26
     type: str
     size: 80
-    encoding: utf-16
+    encoding: utf-16be
   - id: disclaimer_text
     type: str
     size: 4800
-    encoding: utf-16
+    encoding: utf-16be
   - id: unknown_27
     type: u1
   - id: distribution_date_text
     type: str
     size: 82
-    encoding: utt-16
+    encoding: utf-16be
   - id: wii_points_text
     type: str
     size: 82
-    encoding: utf-16
+    encoding: utf-16be
   - id: custom_field_text
     type: str
     size: 82
-    encoding: utf-16
+    encoding: utf-16be
     repeat: expr
     repeat-expr: 10
 instances:
@@ -231,7 +232,7 @@ enums:
     15: ds
     16: dsi
     17: dsiware
-    18: 3ds
-    19: 3ds_download
-    20: 3ds_gameboy
+    18: threeds
+    19: threeds_download
+    20: threeds_gameboy
     21: none
