@@ -25,22 +25,26 @@ seq:
     type: u4
   - id: times_played_offset
     type: u4
-  - id: recommendations_entry_number
+  - id: people_who_liked_this_also_liked_entry_number
     type: u4
-  - id: recommendations_table_offset
+  - id: people_who_liked_this_also_liked_table_offset
     type: u4
-  - id: unknown_2
+  - id: related_titles_entry_number
     type: u4
-    repeat: expr
-    repeat-expr: 2
+  - id: related_titles_table_offset
+    type: u4
   - id: videos_entry_number
     type: u4
   - id: videos_table_offset
     type: u4
+  - id: demo_entry_number
+    type: u4
+  - id: demo_table_offset
+    type: u4
   - id: unknown_3
     type: u4
     repeat: expr
-    repeat-expr: 4
+    repeat-expr: 2
   - id: picture_offset
     type: u4
   - id: picture_size
@@ -51,10 +55,14 @@ seq:
     type: u4
   - id: rating_picture_size
     type: u4
+  - id: rating_detail_picture_offset
+    type: u4
+  - id: rating_detail_picture_size
+    type: u4
   - id: unknown_5
     type: u4
     repeat: expr
-    repeat-expr: 16
+    repeat-expr: 14
   - id: soft_id
     type: u4
   - id: game_id
@@ -150,10 +158,18 @@ seq:
     type: u1
   - id: unknown_25
     type: u1
-  - id: title_text
+  - id: title
     type: str
-    size: 186
     encoding: utf-16be
+    size: 62
+  - id: subtitle
+    type: str
+    encoding: utf-16be
+    size: 62
+  - id: short_title
+    type: str
+    encoding: utf-16be
+    size: 62
   - id: description_text
     type: str
     size: 246
@@ -164,11 +180,11 @@ seq:
     encoding: utf-16be
   - id: players_text
     type: str
-    size: 62
+    size: 82
     encoding: utf-16be
   - id: peripherals_text
     type: str
-    size: 108
+    size: 88
     encoding: utf-16be
   - id: unknown_26
     type: str
