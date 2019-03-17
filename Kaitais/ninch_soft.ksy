@@ -55,14 +55,14 @@ seq:
     type: u4
   - id: rating_picture_size
     type: u4
-  - id: rating_detail_picture_offset
-    type: u4
-  - id: rating_detail_picture_size
-    type: u4
+  - id: rating_detail_picture
+    type: rating_detail_picture
+    repeat: expr
+    repeat-expr: 7
   - id: unknown_5
     type: u4
     repeat: expr
-    repeat-expr: 14
+    repeat-expr: 2
   - id: soft_id
     type: u4
   - id: game_id
@@ -89,7 +89,7 @@ seq:
     type: u1
   - id: release_day
     type: u1
-  - id: wii_points
+  - id: shop_points
     type: u4
     doc: Null if none. 
   - id: unknown_11
@@ -228,6 +228,12 @@ types:
       - id: times_played_per_person
         type: u4
         doc: Will be multiplied by 0.01.
+  rating_detail_picture:
+    seq:
+      - id: rating_detail_picture_offset
+        type: u4
+      - id: rating_detail_picture_size
+        type: u4
 enums:
   platforms:
     0: none
