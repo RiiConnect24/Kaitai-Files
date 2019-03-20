@@ -23,7 +23,7 @@ seq:
     type: u4
   - id: ratings_table_offset
     type: u4
-  - id: times_played_offset
+  - id: times_played_table_offset
     type: u4
   - id: people_who_liked_this_also_liked_entry_number
     type: u4
@@ -211,8 +211,18 @@ seq:
     repeat: expr
     repeat-expr: 10
 instances:
+  related_titles_table:
+    pos: related_titles_table_offset
+    type: related_titles_table
+    repeat: expr
+    repeat-expr: related_titles_entry_number
+  videos_table:
+    pos: videos_table_offset
+    type: videos_table
+    repeat: expr
+    repeat-expr: videos_entry_number
   times_played_table:
-    pos: times_played_offset
+    pos: times_played_table_offset
     type: times_played_table
 types:
   times_played_table:
@@ -228,6 +238,34 @@ types:
       - id: times_played_per_person
         type: u4
         doc: Will be multiplied by 0.01.
+  videos_table:
+    seq:
+      - id: soft_id
+        type: u4
+      - id: platform_type
+        type: u1
+      - id: unknown
+        type: u1
+        repeat: expr
+        repeat-expr: 18
+      - id: title
+        type: str
+        encoding: utf-16be
+        size: 102
+  related_titles_table:
+    seq:
+      - id: soft_id
+        type: u4
+      - id: platform_type
+        type: u1
+      - id: title
+        type: str
+        encoding: utf-16be
+        size: 62
+      - id: subtitle
+        type: str
+        encoding: utf-16be
+        size: 62
   rating_detail_picture:
     seq:
       - id: rating_detail_picture_offset
