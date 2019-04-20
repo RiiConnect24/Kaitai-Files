@@ -211,6 +211,11 @@ seq:
     repeat: expr
     repeat-expr: 10
 instances:
+  people_who_liked_this_also_liked_table:
+    pos: people_who_liked_this_also_liked_table_offset
+    type: people_who_liked_this_also_liked_table
+    repeat: expr
+    repeat-expr: people_who_liked_this_also_liked_entry_number
   related_titles_table:
     pos: related_titles_table_offset
     type: related_titles_table
@@ -221,6 +226,11 @@ instances:
     type: videos_table
     repeat: expr
     repeat-expr: videos_entry_number
+  demo_table:
+    pos: demo_table_offset
+    type: demo_table
+    repeat: expr
+    repeat-expr: demo_entry_number
   times_played_table:
     pos: times_played_table_offset
     type: times_played_table
@@ -252,12 +262,38 @@ types:
         type: str
         encoding: utf-16be
         size: 102
+  people_who_liked_this_also_liked_table:
+    seq:
+      - id: soft_id
+        type: u4
+      - id: platform_type
+        type: u1
+      - id: title
+        type: str
+        encoding: utf-16be
+        size: 62
+      - id: subtitle
+        type: str
+        encoding: utf-16be
+        size: 62
   related_titles_table:
     seq:
       - id: soft_id
         type: u4
       - id: platform_type
         type: u1
+      - id: title
+        type: str
+        encoding: utf-16be
+        size: 62
+      - id: subtitle
+        type: str
+        encoding: utf-16be
+        size: 62
+  demo_table:
+    seq:
+      - id: demo_id
+        type: u4
       - id: title
         type: str
         encoding: utf-16be
