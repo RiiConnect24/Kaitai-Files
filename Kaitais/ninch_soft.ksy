@@ -37,9 +37,9 @@ seq:
     type: u4
   - id: videos_table_offset
     type: u4
-  - id: demo_entry_number
+  - id: demos_entry_number
     type: u4
-  - id: demo_table_offset
+  - id: demos_table_offset
     type: u4
   - id: unknown_3
     type: u4
