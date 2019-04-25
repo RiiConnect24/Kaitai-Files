@@ -172,7 +172,7 @@ seq:
     type: str
     size: 88
     encoding: utf-16be
-  - id: unknown_26
+  - id: unknown_10
     type: str
     size: 80
     encoding: utf-16be
@@ -180,7 +180,7 @@ seq:
     type: str
     size: 4800
     encoding: utf-16be
-  - id: unknown_27
+  - id: unknown_11
     type: u1
   - id: distribution_date_text
     type: str
