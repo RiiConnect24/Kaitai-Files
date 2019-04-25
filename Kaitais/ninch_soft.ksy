@@ -156,8 +156,10 @@ seq:
     size: 62
   - id: description_text
     type: str
-    size: 246
+    size: 82
     encoding: utf-16be
+    repeat: expr
+    repeat-expr: 3
   - id: genre_text
     type: str
     size: 58
