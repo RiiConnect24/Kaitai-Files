@@ -41,7 +41,7 @@ seq:
     type: u4
   - id: demos_table_offset
     type: u4
-  - id: unknown_3
+  - id: unknown_2
     type: u4
     repeat: expr
     repeat-expr: 2
@@ -49,7 +49,7 @@ seq:
     type: u4
   - id: picture_size
     type: u4
-  - id: unknown_4
+  - id: unknown_3
     type: u4
   - id: rating_picture_offset
     type: u4
@@ -59,7 +59,7 @@ seq:
     type: rating_detail_picture
     repeat: expr
     repeat-expr: 7
-  - id: unknown_5
+  - id: unknown_4
     type: u4
     repeat: expr
     repeat-expr: 2
@@ -73,11 +73,11 @@ seq:
     type: u1
   - id: company_id
     type: u4
+  - id: unknown_5
+    type: u2
   - id: unknown_6
     type: u2
   - id: unknown_7
-    type: u2
-  - id: unknown_8
     type: u1
   - id: wii_shop_channel_button_flag
     type: u1
@@ -92,7 +92,7 @@ seq:
   - id: shop_points
     type: u4
     doc: Null if none. 
-  - id: unknown_11
+  - id: unknown_8
     type: u1
     repeat: expr
     repeat-expr: 4
@@ -138,26 +138,10 @@ seq:
     type: u1
   - id: language_dutch_flag
     type: u1
-  - id: unknown_16
+  - id: unknown_9
     type: u1
-  - id: unknown_17
-    type: u1
-  - id: unknown_18
-    type: u1
-  - id: unknown_19
-    type: u1
-  - id: unknown_20
-    type: u1
-  - id: unknown_21
-    type: u1
-  - id: unknown_22
-    type: u1
-  - id: unknown_23
-    type: u1
-  - id: unknown_24 
-    type: u1
-  - id: unknown_25
-    type: u1
+    repeat: expr
+    repeat-expr: 10
   - id: title
     type: str
     encoding: utf-16be
