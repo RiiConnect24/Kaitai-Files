@@ -24,7 +24,9 @@ seq:
     encoding: ascii
   - id: fdtagsize
     type: u2
-  - id: serveractive
+  - id: availableinregionflag1
+    type: u4
+  - id: availableinregionflag2
     type: u4
   - id: unk1
     type: u4
@@ -35,6 +37,4 @@ seq:
   - id: unk4
     type: u4
   - id: unk5
-    type: u4
-  - id: unk6
     type: u4
