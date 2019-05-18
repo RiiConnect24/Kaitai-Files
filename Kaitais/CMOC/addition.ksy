@@ -1,7 +1,7 @@
 meta:
-  id: cmoc_addition
+  id: addition
   file-extension:
-    - dces
+    - ces
   endian: be
 seq:
   - id: type

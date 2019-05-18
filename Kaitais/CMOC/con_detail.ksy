@@ -1,7 +1,7 @@
 meta:
-  id: cmoc_condetail
+  id: con_detail
   file-extension:
-    - dces
+    - ces
   endian: be
 seq:
   - id: type

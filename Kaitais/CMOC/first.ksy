@@ -1,7 +1,7 @@
 meta:
-  id: cmoc_first
+  id: first
   file-extension:
-    - dces
+    - ces
   endian: be
 seq:
   - id: type
