@@ -1,5 +1,5 @@
 meta:
-  id: addition
+  id: pop_list
   file-extension:
     - ces
   endian: be
@@ -7,36 +7,30 @@ seq:
   - id: type
     type: str
     size: 2
-    contents: "AD"
+    contents: "PL"
     encoding: ascii
   - id: padding1
     size: 2
-  - id: id1
-    type: u4
-  - id: id2
+  - id: country_code
     type: u4
   - id: padding2
-    size: 12
+    size: 16
   - id: padding3
     size: 8
   - id: tag
-    type: str
+    type: str 
     size: 2
-    contents: "AD"
+    contents: "PM"
     encoding: ascii
   - id: tag_size
     type: u2
-  - id: unk1
-    type: u4
-  - id: unk2
-    type: u4
-  - id: unk3
-    type: u4
-  - id: unk4
-    type: u4
+  - id: mii
+    type: u1
+    size: 74
   - id: unk5
-    type: u4
-  - id: unk6
-    type: u4
-  - id: unk7
-    type: u4
+    type: u2
+  - id: crc16
+    type: u2
+    doc: CRC-CRITT (XModem)
+  - id: padding
+    type: u2

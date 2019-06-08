@@ -7,6 +7,7 @@ seq:
   - id: type
     type: str
     size: 2
+    contents: "FD"
     encoding: ascii
   - id: padding1
     size: 2
@@ -18,11 +19,12 @@ seq:
     size: 12
   - id: padding3
     size: 8
-  - id: fdtag
+  - id: tag
     type: str
     size: 2
+    contents: "FD"
     encoding: ascii
-  - id: fdtagsize
+  - id: tag_size
     type: u2
   - id: availableinregionflag1
     type: u4

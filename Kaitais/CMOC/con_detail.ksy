@@ -7,6 +7,7 @@ seq:
   - id: type
     type: str
     size: 2
+    contents: "PL"
     encoding: ascii
   - id: padding1
     size: 2
@@ -18,13 +19,14 @@ seq:
     size: 12
   - id: padding3
     size: 8
-  - id: cdtag
-    type: str
+  - id: tag
+    type: str 
     size: 2
+    contents: "PL"
     encoding: ascii
-  - id: cdtagsize
+  - id: tag_size
     type: u2
-  - id: activecontest
+  - id: active_contest
     type: u4
   - id: endtime
     type: u4
