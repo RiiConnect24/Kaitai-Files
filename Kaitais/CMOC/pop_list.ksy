@@ -17,12 +17,12 @@ seq:
     size: 16
   - id: padding3
     size: 8
-  - id: tag
+  - id: pm_tag
     type: str 
     size: 2
     contents: "PM"
     encoding: ascii
-  - id: tag_size
+  - id: pm_size
     type: u2
   - id: mii
     type: u1
