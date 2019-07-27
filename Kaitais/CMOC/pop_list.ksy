@@ -5,10 +5,7 @@ meta:
   endian: be
 seq:
   - id: type
-    type: str
-    size: 2
     contents: "PL"
-    encoding: ascii
   - id: padding1
     size: 2
   - id: country_code
@@ -18,36 +15,29 @@ seq:
   - id: padding3
     size: 8
   - id: pm_tag
-    type: str 
-    size: 2
     contents: "PM"
-    encoding: ascii
   - id: pm_size
     type: u2
+  - id: unk1
+    type: u4
+  - id: entry_number
+    type: u4
+    doc: Somehow converts to a 12-digit number. Does it work like Nintendo Wi-Fi pids?
   - id: mii
-    type: u1
     size: 74
-  - id: unk5
-    type: u2
   - id: crc16
     type: u2
     doc: CRC-CCITT (XModem)
   - id: padding
     type: u4
   - id: pn_tag
-    type: str
-    size: 2
     contents: "PN"
-    encoding: ascii
   - id: pn_size
     type: u2
   - id: unknown1
     size: 88
   - id: pc_tag
-    type: str
-    size: 2
     contents: "PC"
-    encoding: ascii
   - id: pc_size
     type: u2
   - id: unknown2
