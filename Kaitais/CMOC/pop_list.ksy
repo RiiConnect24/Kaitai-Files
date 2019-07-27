@@ -34,3 +34,21 @@ seq:
     doc: CRC-CCITT (XModem)
   - id: padding
     type: u4
+  - id: pn_tag
+    type: str
+    size: 2
+    contents: "PN"
+    encoding: ascii
+  - id: pn_size
+    type: u2
+  - id: unknown1
+    size: 88
+  - id: pc_tag
+    type: str
+    size: 2
+    contents: "PC"
+    encoding: ascii
+  - id: pc_size
+    type: u2
+  - id: unknown2
+    size: 88
