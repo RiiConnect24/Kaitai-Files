@@ -31,6 +31,6 @@ seq:
     type: u2
   - id: crc16
     type: u2
-    doc: CRC-CRITT (XModem)
+    doc: CRC-CCITT (XModem)
   - id: padding
     type: u2
