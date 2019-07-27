@@ -33,4 +33,4 @@ seq:
     type: u2
     doc: CRC-CCITT (XModem)
   - id: padding
-    type: u2
+    type: u4
