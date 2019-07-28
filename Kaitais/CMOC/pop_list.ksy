@@ -29,20 +29,25 @@ seq:
   - id: crc16
     type: u2
     doc: CRC-CCITT (XModem)
-  - id: padding
-    type: u4
+  - id: unk1
+    type: u2
+  - id: popularity
+    type: u1
+    doc: This is weird. 0x13 - 1 star. 0x14 - 2.5 stars. 0x15 - 2.5 stars. 0x16 - 3 stars. 0x17 - 3.5 stars. 0x18 - 3.5 stars. 0x19 - 4 stars. 0x1A - 4.5 stars. 0x1B - 4.5 stars. 0x1C - 5 stars.
+  - id: unk2
+    type: u1
   - id: pn_tag
     contents: "PN"
   - id: pn_size
     type: u2
-  - id: unknown1
+  - id: unk3
     size: 88
   - id: pc_tag
     contents: "PC"
     doc: Mii Artisan data.
   - id: pc_size
     type: u2
-  - id: unk1
+  - id: unk4
     type: u4
   - id: entry_number
     type: u4
@@ -52,10 +57,10 @@ seq:
   - id: crc16
     type: u2
     doc: CRC-CCITT (XModem)
-  - id: unk2
+  - id: unk5
     type: u1
   - id: master_mii_artisan_flag
     type: u1
     doc: If not zero, Master Mii Artisan displays.
-  - id: unk3
+  - id: unk6
     type: u2
