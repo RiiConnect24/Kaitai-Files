@@ -3,6 +3,7 @@ meta:
   file-extension:
     - ces
   endian: be
+  doc: pop_list holds the top 50 Miis, a category that's selectable through the posting plaza.
 seq:
   - id: type
     contents: "PL"
