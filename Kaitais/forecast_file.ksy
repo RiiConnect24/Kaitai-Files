@@ -21,9 +21,10 @@ seq:
     type: u4le
   - id: language_code
     type: u1
-  - id: unknown_1
+  - id: region_flag
     type: u1
-  - id: unknown_2
+    doc: 0 for Japan, 1 for Fahrenheit, and 2 for Celsius
+  - id: unknown_1
     type: u1
   - id: padding
     type: u1
