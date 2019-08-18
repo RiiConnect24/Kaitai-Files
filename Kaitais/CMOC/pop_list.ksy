@@ -37,6 +37,13 @@ seq:
     doc: This is weird. 0x13 - 1 star. 0x14 - 2.5 stars. 0x15 - 2.5 stars. 0x16 - 3 stars. 0x17 - 3.5 stars. 0x18 - 3.5 stars. 0x19 - 4 stars. 0x1A - 4.5 stars. 0x1B - 4.5 stars. 0x1C - 5 stars.
   - id: unk2
     type: u1
+  - id: skill
+    type: u2
+    doc: Looks like the value used for skill, but I'm not sure.
+  - id: initials
+    type: str
+    size: 2
+    doc: The 2nd byte can be 0x00 to just have 1 initial.
   - id: pn_tag
     contents: "PN"
   - id: pn_size
@@ -50,7 +57,7 @@ seq:
     type: u2
   - id: unk4
     type: u4
-  - id: entry_number
+  - id: creator_number
     type: u4
     doc: Somehow converts to a 12-digit number. Does it work like Nintendo Wi-Fi pids?
   - id: mii
@@ -64,4 +71,11 @@ seq:
     type: u1
     doc: If not zero, Master Mii Artisan displays.
   - id: unk6
+    type: u2
+  - id: unk7
+    type: u1
+  - id: country_code
+    type: u1
+    doc: Maps to a country flag. Uses the internal country codes that the Wii usually uses.
+  - id: unk8
     type: u2
