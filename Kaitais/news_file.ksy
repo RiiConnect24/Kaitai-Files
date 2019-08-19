@@ -167,7 +167,7 @@ types:
         encoding: utf-16be
         size: headline_size
       article:
-        pos: articles_offset
+        pos: article_offset
         type: str
         encoding: utf-16be
         size: article_size
