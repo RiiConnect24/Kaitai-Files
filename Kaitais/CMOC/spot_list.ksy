@@ -1,11 +1,11 @@
 meta:
-  id: pop_list
+  id: spot_list
   file-extension: dec
   application: Check Mii Out Channel
   endian: be
 seq:
   - id: type
-    contents: "PL"
+    contents: "SL"
   - id: padding1
     size: 2
   - id: country_code
