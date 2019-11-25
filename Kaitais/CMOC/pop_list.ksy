@@ -11,16 +11,28 @@ seq:
   - id: country_code
     type: u4
   - id: padding2
-    size: 16
+    size: 4
+  - id: error_code
+    type: u4
   - id: padding3
-    size: 8
+    size: 16
+  - id: pn_tag
+    contents: "PN"
+  - id: pn_size
+    type: u2
+  - id: unk1
+    type: u4
+  - id: mii_count
+    type: u4
+    doc: How many miis are being displayed in total. Maximum 500.
   - id: pm_tag
     contents: "PM"
     doc: Mii data.
   - id: pm_size
     type: u2
-  - id: unk1
+  - id: mii_index
     type: u4
+    doc: The mii and its corresponding artisan must have this same number.
   - id: entry_number
     type: u4
     doc: Somehow converts to a 12-digit number. Does it work like Nintendo Wi-Fi pids?
@@ -43,19 +55,14 @@ seq:
     encoding: utf-8
     size: 2
     doc: The 2nd byte can be 0x00 to just have 1 initial.
-  - id: pn_tag
-    contents: "PN"
-  - id: pn_size
-    type: u2
-  - id: unk4
-    size: 88
   - id: pc_tag
     contents: "PC"
     doc: Mii Artisan data.
   - id: pc_size
     type: u2
-  - id: unk5
+  - id: creator_index
     type: u4
+    doc: The mii and its corresponding artisan must have this same number.
   - id: creator_number
     type: u4
     doc: Somehow converts to a 12-digit number. Does it work like Nintendo Wi-Fi pids?
@@ -64,17 +71,17 @@ seq:
   - id: crc162
     type: u2
     doc: CRC-CCITT (XModem)
-  - id: unk6
+  - id: unk4
     type: u1
   - id: master_mii_artisan_flag
     type: u1
     doc: If not zero, Master Mii Artisan displays.
-  - id: unk7
+  - id: unk5
     type: u2
-  - id: unk8
+  - id: unk6
     type: u1
   - id: country_code2
     type: u1
     doc: Maps to a country flag. Uses the internal country codes that the Wii usually uses.
-  - id: unk9
+  - id: unk7
     type: u2
