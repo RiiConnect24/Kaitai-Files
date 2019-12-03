@@ -13,14 +13,38 @@ seq:
   - id: data_size
     type: u4
     doc: Size of the whole file minus the 0x20 byte header.
-  - id: mii_number
-    type: u4
   - id: mii_entry_size
+    type: u4
+  - id: mii_number
     type: u1
   - id: unknown
     type: u1
     repeat: expr
     repeat-expr: 15
   - id: mii
-    type: u1
-    
+    type: mii
+    repeat: expr
+    repeat-expr: mii_number
+types:
+  mii:
+    seq:
+      - id: index
+        type: u1
+      - id: initials
+        type: str
+        size: 2
+        encoding: utf-8
+      - id: country_code
+        type: u1
+      - id: unknown
+        type: u1
+        repeat: expr
+        repeat-expr: 12
+      - id: actual_mii
+        type: u1
+        repeat: expr
+        repeat-expr: 74
+      - id: unknown2
+        type: u1
+        repeat: expr
+        repeat-expr: 78
