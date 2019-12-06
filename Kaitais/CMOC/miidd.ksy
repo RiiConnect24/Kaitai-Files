@@ -37,14 +37,12 @@ types:
       - id: country_code
         type: u1
       - id: unknown
-        type: u1
-        repeat: expr
-        repeat-expr: 12
+        size: 12
       - id: actual_mii
-        type: u1
-        repeat: expr
-        repeat-expr: 74
+        size: 74
       - id: unknown2
-        type: u1
-        repeat: expr
-        repeat-expr: 78
+        size: 3
+      - id: mii_artisan
+        size: 74
+      - id: unknown3
+        size: 3
