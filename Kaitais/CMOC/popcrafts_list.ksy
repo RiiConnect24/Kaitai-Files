@@ -1,3 +1,4 @@
+
 meta:
   id: popcrafts_list
   file-extension:
@@ -20,8 +21,9 @@ seq:
     doc: Mii Artisan data.
   - id: rc_size
     type: u2
-  - id: unk1
+  - id: rc_index
     type: u4
+    doc: This index must be the same as the RK index for each mii
   - id: entry_number
     type: u4
     doc: Somehow converts to a 12-digit number. Does it work like Nintendo Wi-Fi pids?
@@ -44,3 +46,16 @@ seq:
     contents: "RK"
   - id: rk_size
     type: u2
+  - id: unk4
+    type: u4
+  - id: rk_index
+    type: u4
+    doc: This index must be the same as the RC index for each mii
+  - id: day
+    type: u2
+  - id: month
+    type: u1
+  - id: unk5
+    type: u1
+    doc: Certain values of this byte can make the artisan's arrow disappear
+
