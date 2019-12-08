@@ -10,6 +10,7 @@ seq:
     type: u4
   - id: crc32
     type: u4
+    doc: This crc32 is for the data starting at cd_offset, and the size for the data is the number in cd_size_offset.
   - id: image_size_offset
     type: u4
   - id: image_crc_offset
