@@ -40,9 +40,9 @@ types:
         size: 12
       - id: actual_mii
         size: 74
-      - id: unknown2
-        size: 3
+      - id: mii_crc16
+        type: u2
       - id: mii_artisan
         size: 74
-      - id: unknown3
-        size: 3
+      - id: mii_artisan_crc16
+        type: u2
