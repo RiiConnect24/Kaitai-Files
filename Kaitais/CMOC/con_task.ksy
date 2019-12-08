@@ -20,7 +20,7 @@ seq:
     type: u4
   - id: date_offset
     type: u4
-  - id: unknown1
+  - id: unknown2
     type: u4
   - id: tag
     type: str
