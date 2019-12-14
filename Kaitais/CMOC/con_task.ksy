@@ -1,7 +1,7 @@
 meta:
   id: con_task
   file-extension:
-    - bin
+    - ces
   endian: be
 seq:
   - id: version
@@ -22,12 +22,12 @@ seq:
     type: u4
   - id: unknown2
     type: u4
-  - id: tag
+  - id: cd_tag
     type: str
     size: 2
     encoding: ascii
-  - id: unknown3
-    type: u4
+  - id: cd_size
+    type: u2
   - id: contest_no_offset
     type: u4
   - id: contest_status_offset
