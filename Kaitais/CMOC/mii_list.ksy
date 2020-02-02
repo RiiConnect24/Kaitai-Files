@@ -5,13 +5,13 @@ meta:
     - ces
     - dec
   application: Check Mii Out Channel
-  doc: Used in: pop_list, spot_list, bargain_list, new_list, select_list, and special_list
+  doc: Used in: pop_list, spot_list, bargain_list, new_list, select_list, special_list and best_list
   endian: be
 seq:
   - id: header
     type: header
-  - id: pn
-    type: pn
+  - id: number
+    type: number
     doc: Mii number.
   - id: mii_data
     type: mii_data
@@ -35,16 +35,18 @@ types:
         size: 16
   mii_data:
     seq:
-      - id: pm
-        type: pm
+      - id: mii
+        type: mii
         doc: Mii data.
-      - id: pc
-        type: pc
+      - id: mii_artisan
+        type: mii_artisan
         doc: Mii Artisan data.
-  pn:
+  number:
     seq:
-      - id: pn_tag
-        contents: "PN"
+      - id: tag
+        type: str
+        size: 2
+        doc: If it starts with a P, it's for posting plaza - if it starts with a C, it's for contests.
       - id: pn_size
         type: u2
       - id: unk1
@@ -52,10 +54,12 @@ types:
       - id: mii_count
         type: u4
         doc: How many miis are being displayed in total. Maximum 500.
-  pm:
+  mii:
     seq:
-      - id: pm_tag
-        contents: "PM"
+      - id: tag
+        type: str
+        size: 2
+        doc: If it starts with a P, it's for posting plaza - if it starts with a C, it's for contests.
       - id: pm_size
         type: u2
       - id: mii_index
@@ -83,10 +87,12 @@ types:
         encoding: utf-8
         size: 2
         doc: The 2nd byte can be 0x00 to just have 1 initial.
-  pc:
+  mii_artisan:
     seq:
-      - id: pc_tag
-        contents: "PC"
+      - id: tag
+        type: str
+        size: 2
+        doc: If it starts with a P, it's for posting plaza - if it starts with a C, it's for contests.
       - id: pc_size
         type: u2
       - id: creator_index
