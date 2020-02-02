@@ -71,6 +71,7 @@ types:
         0: none
         1: master_mii_artisan
         2: new
+        3: master_mii_artisan_and_new
       arrows:
         0: up_straight
         1: down_diagonal
