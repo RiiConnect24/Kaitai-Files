@@ -1,9 +1,11 @@
 meta:
-  id: pop_list
+  id: posting_plaza_mii_list
+  title: Posting Plaza Mii List
   file-extension:
     - ces
     - dec
   application: Check Mii Out Channel
+  doc: Used in: pop_list, spot_list, bargain_list, new_list, select_list, and special_list
   endian: be
 seq:
   - id: header
@@ -19,7 +21,8 @@ types:
   header:
     seq:
       - id: type
-        contents: "PL"
+        type: str
+        size: 2
       - id: padding1
         size: 2
       - id: country_code
