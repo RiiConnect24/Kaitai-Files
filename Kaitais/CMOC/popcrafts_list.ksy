@@ -51,9 +51,9 @@ types:
         doc: CRC-CCITT (XModem)
       - id: unk1
         type: u1
-      - id: master_mii_artisan_flag
+      - id: flair
         type: u1
-        doc: If not zero, Master Mii Artisan displays.
+        enum: flairs
       - id: popularity
         type: u1
         doc: This is weird. 0x13 - 1 star. 0x14 - 2.5 stars. 0x15 - 2.5 stars. 0x16 - 3 stars. 0x17 - 3.5 stars. 0x18 - 3.5 stars. 0x19 - 4 stars. 0x1A - 4.5 stars. 0x1B - 4.5 stars. 0x1C - 5 stars.
@@ -67,6 +67,10 @@ types:
       - id: unk3
         type: u2
     enums:
+      flairs:
+        0: none
+        1: master_mii_artisan
+        2: new
       arrows:
         0: up_straight
         1: down_diagonal
