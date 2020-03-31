@@ -212,11 +212,11 @@ instances:
     type: videos_table
     repeat: expr
     repeat-expr: videos_entry_number
-  demo_table:
-    pos: demo_table_offset
-    type: demo_table
+  demos_table:
+    pos: demos_table_offset
+    type: demos_table
     repeat: expr
-    repeat-expr: demo_entry_number
+    repeat-expr: demos_entry_number
   times_played_table:
     pos: times_played_table_offset
     type: times_played_table
@@ -276,7 +276,7 @@ types:
         type: str
         encoding: utf-16be
         size: 62
-  demo_table:
+  demos_table:
     seq:
       - id: demo_id
         type: u4
