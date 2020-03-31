@@ -71,10 +71,18 @@ seq:
   - id: unknown_7
     type: u4
     repeat: expr
-    repeat-expr: 8
-  - id: videos_2_entry_number
+    repeat-expr: 4
+  - id: recent_recommendations_entry_number
     type: u4
-  - id: videos_2_table_offset
+  - id: recent_recommendations_table_offset
+    type: u4
+  - id: unknown_8
+    type: u4
+    repeat: expr
+    repeat-expr: 2
+  - id: popular_videos_entry_number
+    type: u4
+  - id: popular_videos_table_offset
     type: u4
   - id: detailed_ratings_entry_number
     type: u4
@@ -84,7 +92,7 @@ seq:
     type: str
     encoding: utf-16be
     size: 62
-  - id: unknown_8
+  - id: unknown_9
     type: u1
     repeat: expr
     repeat-expr: 3
@@ -141,11 +149,16 @@ instances:
     type: recommendations_table
     repeat: expr
     repeat-expr: recommendations_entry_number
-  videos_2_table:
-    pos: videos_2_table_offset
-    type: videos_2_table
+  recent_recommendations_table:
+    pos: recent_recommendations_table_offset
+    type: recent_recommendations_table
     repeat: expr
-    repeat-expr: videos_2_entry_number
+    repeat-expr: recent_recommendations_entry_number
+  popular_videos_table:
+    pos: popular_videos_table_offset
+    type: popular_videos_table
+    repeat: expr
+    repeat-expr: popular_videos_entry_number
   detailed_ratings_table:
     pos: detailed_ratings_table_offset
     type: detailed_ratings_table
@@ -213,10 +226,10 @@ types:
         size: 4
       - id: title_type
         type: u1
-      - id: unknown
+      - id: genre
         type: u1
-      - id: unknown_2
-        type: u2
+        repeat: expr
+        repeat-expr: 3
       - id: company_offset
         type: u4
       - id: release_date_year
@@ -361,20 +374,40 @@ types:
       recommendation_title_entry:
         pos: recommendation_title_offset
         type: title_table
-  videos_2_table:
+  recent_recommendations_table:
+    seq:
+      - id: recent_recommendation_title_offset
+        type: u4
+      - id: unknown
+        type: u2
+    instances:
+      recent_recommendation_title_entry:
+        pos: recent_recommendation_title_offset
+        type: title_table
+  popular_videos_table:
     seq:
       - id: id
         type: u4
         doc: Decimal ID for URL filename.
-      - id: unknown
+      - id: time_length
         type: u2
-        doc: Time length?
       - id: title_id
         type: u4
+      - id: bar_color
+        type: u1
+        doc: 0 for grey, 1 for blue, 8 for red
       - id: unknown_2
         type: u1
         repeat: expr
-        repeat-expr: 20
+        repeat-expr: 15
+      - id: rating_id
+        type: u1
+      - id: unknown_3
+        type: u1
+      - id: video_rank
+        type: u1
+      - id: unknown_4
+        type: u1
       - id: title
         type: str
         encoding: utf-16be
@@ -388,4 +421,4 @@ types:
       - id: title
         type: str
         encoding: utf-16be
-        size: 102
+        size: 204
