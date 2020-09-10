@@ -17,8 +17,15 @@ seq:
   - id: ecdhdata
     size: 60
     doc: Used to generate one-time key during install of console specific titles.
-  - id: padding2
-    size: 3
+  - id: file_version
+    type: u1
+    doc: This ticket format's version. Always 0 on the Wii.
+  - id: ca_crl_version
+    type: u1
+    doc: The expected CA's CRL version. Always 0 on the Wii.
+  - id: signer_crl_version
+    type: u1
+    doc: The expected signer's CRL version. Always 0 on the Wii.
   - id: encrypted_title_key
     size: 16
   - id: unknown
@@ -35,7 +42,8 @@ seq:
     type: u2
     doc: Usually 0xFFFF.
   - id: ticket_version
-    type: u1
+    type: u2
+    doc: Version of this ticket for this title.
   - id: permitted_titles_mask
     type: u4
   - id: permit_mask
@@ -56,12 +64,16 @@ seq:
     repeat-expr: 64
   - id: padding3
     type: u2
-  - id: enable_time_limit
-    type: u4
-    doc: 0 = Disabled. 1= Enabled.
-  - id: time_limit_seconds
-    type: u4
   - id: time_limit_structs
-    type: u8
+    type: time_limit_struct
     repeat: expr
-    repeat-expr: 7
+    repeat-expr: 8
+types:
+  time_limit_struct:
+    seq:
+      - id: enable_limit
+        type: u4
+        doc: 0 = Disabled. 1 = Enabled.
+      - id: time_limit
+        type: u4
+        doc: Integer of time limit in seconds.
