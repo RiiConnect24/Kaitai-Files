@@ -1,0 +1,135 @@
+meta:
+  id: mobiclip
+  file-extension: mo
+  endian: le
+seq:
+  - id: magic
+    contents: "MO"
+  - id: stream_type
+    contents: "C5"
+  - id: header_size
+    type: u4
+    doc: "Add 8 for the actual header size."
+  - id: chunk_type_id
+    contents: "TL"
+  - id: subchunk_count
+    type: u2
+  - id: unknown_3
+    type: u1
+  - id: fps
+    type: u1
+  - id: unknown_4
+    type: u2
+  - id: chunk_count
+    type: u4
+  - id: unknown_5
+    type: u2
+  - id: unknown_6
+    type: u2
+  - id: v2
+    contents: "V2"
+  - id: unknown_7
+    type: u2
+  - id: width
+    type: u4
+  - id: height
+    type: u4
+  - id: pc
+    contents: [112, 99, 40, 0]
+  - id: rsa_signature
+    size: 160
+    doc: "RSA-1280 with Barrett reduction."
+  - id: audio_chunk_signature_1
+    type: str
+    encoding: ascii
+    size: 2
+  - id: audio_chunk_header_1
+    type:
+      switch-on: audio_chunk_signature_1
+      cases:
+        "'A3'": audio_chunk_standard
+        "'A9'": audio_chunk_standard
+        "'AM'": audio_chunk_am
+        "'AP'": audio_chunk_standard
+        "'AV'": audio_chunk_av
+        "'KI'": audio_chunk_standard
+        "'PÆ'": audio_chunk_standard
+    doc: |
+      A2 -> FastAudio
+      A3 -> FastAudio
+      A8 -> ADPCM
+      A9 -> ??? (Used in Wii + Internet video, sounds low quality)
+      AM -> ???
+      AP -> PCM (passes directly to the speaker)
+      AV -> Vorbis
+      KI -> ??? (is it an audio codec?)
+      PÆ -> ??? (is it an audio codec?)
+  - id: audio_chunk_signature_2
+    type: str
+    encoding: ascii
+    size: 2
+    if: header_size < 4200
+  - id: audio_chunk_header_2
+    type:
+      switch-on: audio_chunk_signature_2
+      cases:
+        "'A3'": audio_chunk_standard
+        "'A9'": audio_chunk_standard
+        "'AM'": audio_chunk_am
+        "'AP'": audio_chunk_standard
+        "'AV'": audio_chunk_av
+        "'KI'": audio_chunk_standard
+        "'PÆ'": audio_chunk_standard
+    type: audio_chunk_signature
+    if: header_size < 4200
+instances:
+  video_header:
+    type: video_header
+    pos: header_size + 4
+  chunk:
+    type: chunk
+    pos: header_size + 8
+    repeat: expr
+    repeat-expr: chunk_count
+types:
+  video_header:
+    seq:
+      - id: data_start
+        contents: [72, 69, 0, 0]
+  chunk:
+    seq:
+      - id: chunk_size
+        type: u4
+      - id: video_chunk_size
+        type: u4
+      - id: video_chunk
+        size: video_chunk_size
+      - id: audio_chunk
+        if: chunk_size - video_chunk_size - 8 > 0
+        size: chunk_size - video_chunk_size - 8
+      - id: unknown
+        if: chunk_size - video_chunk_size - 8 > 0
+        size: (_io.pos + 4 - (_io.pos % 4)) - _io.pos
+  audio_chunk_standard:
+    seq:
+      - id: stream_type
+        type: u2
+      - id: frequency
+        type: u4
+      - id: channels
+        type: u4
+        type: u1
+  audio_chunk_am:
+    seq:
+      - id: audio_stream_count
+        type: u2
+      - id: audio_stream_features
+        type: audio_chunk_standard
+        repeat: expr
+        repeat-expr: audio_stream_count
+  audio_chunk_av:
+    seq:
+      - id: unknown_1
+        type: u4
+      - id: unknown_2
+        type: u2
