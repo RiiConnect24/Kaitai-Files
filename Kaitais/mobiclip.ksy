@@ -14,12 +14,8 @@ seq:
     contents: "TL"
   - id: subchunk_count
     type: u2
-  - id: unknown_3
-    type: u1
   - id: fps
-    type: u1
-  - id: unknown_4
-    type: u2
+    type: u4
   - id: chunk_count
     type: u4
   - id: unknown_5
