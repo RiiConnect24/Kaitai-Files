@@ -54,11 +54,11 @@ seq:
       A2 -> FastAudio
       A3 -> FastAudio
       A8 -> ADPCM
-      A9 -> ??? (Used in Wii + Internet video, sounds low quality)
+      A9 -> ADPCM
       AM -> ???
       AP -> PCM (passes directly to the speaker)
       AV -> Vorbis
-      KI -> ??? (is it an audio codec?)
+      KI -> Frame Index (is it an audio codec?)
       PÆ -> ??? (is it an audio codec?)
   - id: audio_chunk_signature_2
     type: str
