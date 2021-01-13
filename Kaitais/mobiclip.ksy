@@ -35,50 +35,13 @@ seq:
   - id: rsa_signature
     size: 160
     doc: "RSA-1280 with Barrett reduction."
-  - id: audio_chunk_signature_1
-    type: str
-    encoding: ascii
-    size: 2
-  - id: audio_chunk_header_1
-    type:
-      switch-on: audio_chunk_signature_1
-      cases:
-        "'A3'": audio_chunk_standard
-        "'A9'": audio_chunk_standard
-        "'AM'": audio_chunk_am
-        "'AP'": audio_chunk_standard
-        "'AV'": audio_chunk_av
-        "'KI'": audio_chunk_standard
-        "'PÆ'": audio_chunk_standard
-    doc: |
-      A2 -> FastAudio
-      A3 -> FastAudio
-      A8 -> ADPCM
-      A9 -> ADPCM
-      AM -> ???
-      AP -> PCM (passes directly to the speaker)
-      AV -> Vorbis
-      KI -> Frame Index (is it an audio codec?)
-      PÆ -> ??? (is it an audio codec?)
-  - id: audio_chunk_signature_2
-    type: str
-    encoding: ascii
-    size: 2
-    if: header_size < 4200
-  - id: audio_chunk_header_2
-    type:
-      switch-on: audio_chunk_signature_2
-      cases:
-        "'A3'": audio_chunk_standard
-        "'A9'": audio_chunk_standard
-        "'AM'": audio_chunk_am
-        "'AP'": audio_chunk_standard
-        "'AV'": audio_chunk_av
-        "'KI'": audio_chunk_standard
-        "'PÆ'": audio_chunk_standard
-    type: audio_chunk_signature
-    if: header_size < 4200
+  - id: audio_and_frame_headers
+    type: audio_and_frame_header
+    repeat: expr
+    repeat-expr: 2
 instances:
+  audio_and_frame_header:
+    type: audio_and_frame_header
   video_header:
     type: video_header
     pos: header_size + 4
@@ -88,6 +51,33 @@ instances:
     repeat: expr
     repeat-expr: chunk_count
 types:
+  audio_and_frame_header:
+    seq:
+      - id: chunk_marker
+        type: str
+        encoding: ascii
+        size: 2
+      - id: chunk_header
+        type:
+          switch-on: chunk_marker
+          cases:
+            "'A3'": audio_chunk_standard
+            "'A9'": audio_chunk_standard
+            "'AM'": audio_chunk_am
+            "'AP'": audio_chunk_standard
+            "'AV'": audio_chunk_av
+            "'KI'": keyframe_index
+            "'PÆ'": audio_chunk_standard
+        doc: |
+          A2 -> FastAudio
+          A3 -> FastAudio
+          A8 -> ADPCM
+          A9 -> ADPCM
+          AM -> ???
+          AP -> PCM (passes directly to the speaker)
+          AV -> Vorbis
+          KI -> Keyframe Index
+          PÆ -> ??? (is it an audio codec?)
   video_header:
     seq:
       - id: data_start
@@ -125,7 +115,22 @@ types:
         repeat-expr: audio_stream_count
   audio_chunk_av:
     seq:
-      - id: unknown_1
-        type: u4
-      - id: unknown_2
+      - id: header
+        size: 3554
+  keyframe_index:
+    seq:
+      - id: entry_count
         type: u2
+      - id: keyframe
+        type: keyframe
+        repeat: expr
+        repeat-expr: entry_count / 2
+      - id: unknown
+        size: 68
+  keyframe:
+    seq:
+      - id: audio_sample_index
+        type: u4
+        doc: Unsure.
+      - id: frame_index
+        type: u4
