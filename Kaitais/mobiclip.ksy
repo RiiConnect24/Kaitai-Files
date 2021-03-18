@@ -129,8 +129,7 @@ types:
         size: 68
   keyframe:
     seq:
-      - id: audio_sample_index
+      - id: chunk_offset
         type: u4
-        doc: Unsure.
       - id: frame_index
         type: u4
