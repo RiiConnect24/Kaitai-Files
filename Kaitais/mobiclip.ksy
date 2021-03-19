@@ -61,6 +61,7 @@ types:
         type:
           switch-on: chunk_marker
           cases:
+            "'A2'": audio_chunk_standard
             "'A3'": audio_chunk_standard
             "'A9'": audio_chunk_standard
             "'AM'": audio_chunk_am
