@@ -64,9 +64,9 @@ types:
             "'A2'": audio_chunk_standard
             "'A3'": audio_chunk_standard
             "'A9'": audio_chunk_standard
-            "'AM'": audio_chunk_am
+            "'AM'": audio_chunk_multitrack
             "'AP'": audio_chunk_standard
-            "'AV'": audio_chunk_av
+            "'AV'": audio_chunk_vorbis
             "'KI'": keyframe_index
             "'PÆ'": audio_chunk_standard
         doc: |
@@ -74,11 +74,11 @@ types:
           A3 -> FastAudio
           A8 -> ADPCM
           A9 -> ADPCM
-          AM -> ???
-          AP -> PCM (passes directly to the speaker)
+          AM -> Multitrack
+          AP -> PCM
           AV -> Vorbis
           KI -> Keyframe Index
-          PÆ -> ??? (is it an audio codec?)
+          PÆ -> ???
   video_header:
     seq:
       - id: data_start
@@ -103,18 +103,19 @@ types:
         type: u2
       - id: frequency
         type: u4
-      - id: channels
+      - id: channel_number
         type: u4
-        type: u1
-  audio_chunk_am:
+  audio_chunk_multitrack:
     seq:
-      - id: audio_stream_count
+      - id: header_length
         type: u2
+      - id: audio_stream_count
+        type: u4
       - id: audio_stream_features
         type: audio_chunk_standard
         repeat: expr
         repeat-expr: audio_stream_count
-  audio_chunk_av:
+  audio_chunk_vorbis:
     seq:
       - id: header
         size: 3554
