@@ -651,6 +651,7 @@ enums:
     175: syria
     176: bahrain
     177: jordan
+    254: other
   language_code:
     0: japanese
     1: english
