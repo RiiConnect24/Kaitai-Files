@@ -6,7 +6,7 @@ meta:
   application: Mario Kart Wii
   endian: be
 seq:
-  - id: magic
+  - id: magic_rkct
     type: str
     size: 4
     encoding: utf-8
@@ -30,8 +30,12 @@ seq:
   - id: course_id
     type: u1
   - id: engine_class
-    type: u2
+    type: u1
     enum: engine_class
+  - id: lap_count
+    type: u1
+  - id: padding_1
+    type: u1
   - id: vehicle_restriction
     type: u2
     enum: vehicle_restriction
@@ -47,19 +51,18 @@ seq:
     type: u2
   - id: cannon_flag
     type: u2
-    doc: If a track has no cannon, this is set to 0. If a track has a cannon and its
-setting is 0xFFFF, it is set to 0, too. Otherwise, it is set to the value of the cannon setting.
+    doc: If a track has no cannon, this is set to 0. If a track has a cannon and its setting is 0xFFFF, it is set to 0, too. Otherwise, it is set to the value of the cannon setting.
   - id: cpu_players_amount
     type: u2
   - id: driver_vehicle_settings_cpu_players
+    type: u1
     repeat: expr
     repeat-expr: 22
-    doc: First byte driver, second byte vehicle.
-0xFF for random driver / vehicle or unused slots.
+    doc: First byte driver, second byte vehicle. 0xFF for random driver / vehicle or unused slots.
   - id: controller
     type: u1
     enum: controller
-  - id: padding
+  - id: padding_2
     type: u1
   - id: common_object_files
     type: u2
@@ -71,16 +74,18 @@ setting is 0xFFFF, it is set to 0, too. Otherwise, it is set to the value of the
     type: u1
     enum: intro_settings
     doc: Between 0x00 and 0x03.
-  - id: padding
+  - id: padding_3
     type: u1
-  - id: unknown2
+  - id: unknown_2
     type: u2
-    enum: unknown2
+    enum: unknown_2
     doc: Not used by the game.
   - id: padding
     type: u2
   - id: header_checksum
     type: u2
+  - id: data
+    size: _io.size - _io.pos
 enums:
   game_mode:
     0: time_trial
@@ -89,12 +94,13 @@ enums:
     4: spiky_topmen_big_pokey
     5: coins
     6: star_gates
+    7: hit_cpus_unused
     11: battle_no_position_tracker
     12: battle_position_tracker
   engine_class:
-    0: 50cc
-    1: 100cc
-    2: 150cc
+    0: cc50
+    1: cc100
+    2: cc150
     3: battle
   vehicle_restriction:
     0: karts_only
@@ -108,6 +114,10 @@ enums:
     1: wii_wheel_only
   intro_settings:
     0: no_intro_video
-  unknown2:
+    1: intro_with_battle_music
+    2: intro_with_vs_race_music
+    3: intro_with_boss_music
+  unknown_2:
     18000: tracks_with_laps
     36000: tracks_with_score
+    54000: giant_pokey

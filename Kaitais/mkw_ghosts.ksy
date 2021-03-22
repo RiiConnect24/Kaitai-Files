@@ -79,7 +79,7 @@ seq:
     doc: See the Mii kaitai for file structure.
   - id: crc16_mii
     type: u2
-    doc: Checksum of the Mii.
+    doc: Checksum of the Mii. (CCITT XModem)
   - id: data
     size: _io.size - _io.pos
 types:
