@@ -19,11 +19,13 @@ seq:
     doc: Timestamp is minutes since 2000.
   - id: country_code
     type: u4le
+    enum: country_code
   - id: language_code
     type: u1
+    enum: language_code
   - id: region_flag
     type: u1
-    doc: 0 for Japan, 1 for Fahrenheit, and 2 for Celsius
+    enum: region_flag
   - id: unknown_1
     type: u1
   - id: padding
@@ -100,6 +102,7 @@ types:
     seq:
       - id: country_code
         type: u1
+        enum: country_code
       - id: region_code
         type: u1
       - id: location_code
@@ -156,6 +159,7 @@ types:
         doc: Only used for the Japanese version of this Channel.
       - id: today_wind_direction
         type: u1
+        enum: wind_direction
       - id: today_wind_speed_kilometers_per_hour
         type: u1
       - id: today_wind_speed_miles_per_hour
@@ -212,6 +216,7 @@ types:
         doc: Only used for the Japanese version of this Channel.
       - id: tomorrow_wind_direction
         type: u1
+        enum: wind_direction
       - id: tomorrow_wind_speed_kilometers_per_hour
         type: u1
       - id: tomorrow_wind_speed_miles_per_hour
@@ -344,6 +349,7 @@ types:
     seq:
       - id: country_code
         type: u1
+        enum: country_code
       - id: region_code
         type: u1
       - id: location_code
@@ -400,6 +406,7 @@ types:
         doc: Only used for the Japanese version of this Channel.
       - id: today_wind_direction
         type: u1
+        enum: wind_direction
       - id: today_wind_speed_kilometers_per_hour
         type: u1
       - id: today_wind_speed_miles_per_hour
@@ -454,6 +461,7 @@ types:
         doc: Only used for the Japanese version of this Channel.
       - id: tomorrow_wind_direction
         type: u1
+        enum: wind_direction
       - id: tomorrow_wind_speed_kilometers_per_hour
         type: u1
       - id: tomorrow_wind_speed_miles_per_hour
@@ -496,6 +504,7 @@ types:
     seq:
       - id: country_code
         type: u1
+        enum: country_code
       - id: region_code
         type: u1
       - id: location_code
@@ -668,3 +677,7 @@ enums:
     14: nw
     15: nnw
     16: n
+  region_flag:
+    0: japan
+    1: fahrenheit
+    2: celsius
