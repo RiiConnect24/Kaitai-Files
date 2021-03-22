@@ -32,6 +32,7 @@ seq:
     type: b5
   - id: controller_id
     type: b4
+    enum: controllers
   - id: unknown_2
     type: b4
     doc: Always 0?
@@ -42,6 +43,7 @@ seq:
     doc: Always 0?
   - id: ghost_type
     type: b7
+    enum: ghost
   - id: drift_type
     type: b1
   - id: unknown_4
@@ -89,3 +91,48 @@ types:
         type: b7
       - id: finishing_time_milliseconds
         type: b10
+enums:
+  controllers:
+    0: wii_wheel
+    1: wii_remote
+    2: classic_controller
+    3: gamecube_controller
+  ghost:
+    1: players_best_time
+    2: world_record_ghost
+    3: continental_record_ghost
+    4: flag_challenge_ghost
+    6: ghost_race
+    7: friend_ghost
+    8: friend_ghost
+    9: friend_ghost
+    10: friend_ghost
+    11: friend_ghost
+    12: friend_ghost
+    13: friend_ghost
+    14: friend_ghost
+    15: friend_ghost
+    16: friend_ghost
+    17: friend_ghost
+    18: friend_ghost
+    19: friend_ghost
+    20: friend_ghost
+    21: friend_ghost
+    22: friend_ghost
+    23: friend_ghost
+    24: friend_ghost
+    25: friend_ghost
+    26: friend_ghost
+    27: friend_ghost
+    28: friend_ghost
+    29: friend_ghost
+    30: friend_ghost
+    31: friend_ghost
+    32: friend_ghost
+    33: friend_ghost
+    34: friend_ghost
+    35: friend_ghost
+    36: friend_ghost
+    37: friend_ghost
+    37: normal_staff_ghost
+    38: expert_staff_ghost
