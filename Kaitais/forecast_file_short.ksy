@@ -18,8 +18,10 @@ seq:
     doc: Timestamp is minutes since 2000.
   - id: country_code
     type: u4le
+    enum: country_code
   - id: language_code
     type: u1
+    enum: language_code
   - id: unknown_1
     type: u1
   - id: unknown_2
@@ -41,6 +43,7 @@ types:
     seq:
       - id: country_code
         type: u1
+        enum: country_code
       - id: region_code
         type: u1
       - id: location_code
@@ -61,6 +64,7 @@ types:
         type: s1
       - id: current_wind_direction
         type: u1
+        enum: wind_direction
       - id: current_wind_speed_kilometers_per_hour
         type: u1
       - id: current_wind_speed_miles_per_hour
@@ -195,6 +199,7 @@ enums:
     175: syria
     176: bahrain
     177: jordan
+    254: other
   language_code:
     0: japanese
     1: english
