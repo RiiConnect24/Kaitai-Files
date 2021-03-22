@@ -5,7 +5,7 @@ meta:
 seq:
   - id: version
     type: u4
-    doc: v1 of News Channel is set to 0, v2 of News Channel is set to 512.
+    enum: version
   - id: filesize
     type: u4
   - id: crc32
@@ -17,15 +17,24 @@ seq:
     type: u4
     doc: Timestamp is minutes since 2000.
   - id: country_code
-    type: u4le
+    type: u1
+    enum: country_code
+  - id: unknown
+    type: u1
+    repeat: expr
+    repeat-expr: 3
   - id: updated_timestamp_2
     type: u4
     doc: Timestamp is minutes since 2000.
   - id: language_list
-    size: 16
+    type: u1
+    repeat: expr
+    repeat-expr: 16
+    enum: language_code
     doc: For the language select screen.
   - id: language_code
     type: u1
+    enum: language_code
   - id: goo_flag
     type: u1
   - id: language_select_screen_flag
@@ -56,7 +65,7 @@ seq:
     type: u4
   - id: download_count
     type: u2
-  - id: unknown
+  - id: unknown_2
     type: u2
   - id: wii_menu_headlines_entry_number
     type: u4
@@ -118,8 +127,10 @@ types:
       topics_text:
         pos: topics_text_offset
         type: str
+        size: 2
         encoding: utf-16be
-        terminator: 0x0000
+        repeat: until
+        repeat-until: _ == "\0"
       timestamps:
         pos: timestamps_offset
         type: timestamps
@@ -175,9 +186,11 @@ types:
     seq:
       - id: source_logo
         type: u1
+        enum: source_logo
       - id: source_position
         type: u1
-      - id: padding
+        enum: source_position
+      - id: unknown
         type: u2
       - id: source_picture_size
         type: u4
@@ -215,18 +228,25 @@ types:
         type: u2
       - id: country_code
         type: u1
+        enum: country_code
       - id: region_code
         type: u1
       - id: location_code
         type: u2
       - id: location_zoom
-        type: u4le
+        type: u1
+      - id: unknown
+        type: u1
+        repeat: expr
+        repeat-expr: 3
     instances:
       location_text:
         pos: location_text_offset
         type: str
+        size: 2
         encoding: utf-16be
-        terminator: 0x0000
+        repeat: until
+        repeat-until: _ == "\0"
   pictures_table:
     seq:
       - id: credit_size
@@ -381,6 +401,7 @@ enums:
     175: syria
     176: bahrain
     177: jordan
+    254: other
   language_code:
     0: japanese
     1: english
@@ -389,6 +410,7 @@ enums:
     4: spanish
     5: italian
     6: dutch
+    255: none
   source_logo:
     0: custom_logo
     1: mainichi
@@ -404,3 +426,6 @@ enums:
     4: right_side_under_headline
     5: right_side_under_headline
     6: left_side_under_headline
+  version:
+    0: v1
+    512: v2

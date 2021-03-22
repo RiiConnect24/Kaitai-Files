@@ -17,14 +17,18 @@ seq:
     type: u4
     doc: Timestamp is minutes since 2000.
   - id: country_code
-    type: u4le
+    type: u1
     enum: country_code
+  - id: unknown_1
+    type: u1
+    repeat: expr
+    repeat-expr: 3
   - id: language_code
     type: u1
     enum: language_code
-  - id: unknown_1
-    type: u1
   - id: unknown_2
+    type: u1
+  - id: unknown_3
     type: u1
   - id: padding
     type: u1

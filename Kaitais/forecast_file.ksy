@@ -18,15 +18,19 @@ seq:
     type: u4
     doc: Timestamp is minutes since 2000.
   - id: country_code
-    type: u4le
+    type: u1
     enum: country_code
+  - id: unknown_1
+    type: u1
+    repeat: expr
+    repeat-expr: 3
   - id: language_code
     type: u1
     enum: language_code
   - id: region_flag
     type: u1
     enum: region_flag
-  - id: unknown_1
+  - id: unknown_2
     type: u1
   - id: padding
     type: u1
@@ -485,19 +489,31 @@ types:
   uv_index_table:
     seq:
       - id: uv_index_code
-        type: u4le
+        type: u1
+      - id: unknown
+        type: u1
+        repeat: expr
+        repeat-expr: 3
       - id: uv_index_text_offset
         type: u4
   laundry_index_table:
     seq:
       - id: laundry_index_code
-        type: u4le
+        type: u1
+      - id: unknown
+        type: u1
+        repeat: expr
+        repeat-expr: 3
       - id: laundry_index_text_offset
         type: u4
   pollen_count_table:
     seq:
       - id: pollen_count_code
-        type: u4le
+        type: u1
+      - id: unknown
+        type: u1
+        repeat: expr
+        repeat-expr: 3
       - id: pollen_count_text_offset
         type: u4
   location_table:
@@ -651,7 +667,6 @@ enums:
     175: syria
     176: bahrain
     177: jordan
-    254: other
   language_code:
     0: japanese
     1: english
