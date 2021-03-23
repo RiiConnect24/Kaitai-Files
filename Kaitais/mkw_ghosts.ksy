@@ -103,36 +103,35 @@ enums:
     3: continental_record_ghost
     4: flag_challenge_ghost
     6: ghost_race
-    7: friend_ghost
-    8: friend_ghost
-    9: friend_ghost
-    10: friend_ghost
-    11: friend_ghost
-    12: friend_ghost
-    13: friend_ghost
-    14: friend_ghost
-    15: friend_ghost
-    16: friend_ghost
-    17: friend_ghost
-    18: friend_ghost
-    19: friend_ghost
-    20: friend_ghost
-    21: friend_ghost
-    22: friend_ghost
-    23: friend_ghost
-    24: friend_ghost
-    25: friend_ghost
-    26: friend_ghost
-    27: friend_ghost
-    28: friend_ghost
-    29: friend_ghost
-    30: friend_ghost
-    31: friend_ghost
-    32: friend_ghost
-    33: friend_ghost
-    34: friend_ghost
-    35: friend_ghost
-    36: friend_ghost
-    37: friend_ghost
+    7: friend_ghost_01
+    8: friend_ghost_02
+    9: friend_ghost_03
+    10: friend_ghost_04
+    11: friend_ghost_05
+    12: friend_ghost_06
+    13: friend_ghost_07
+    14: friend_ghost_08
+    15: friend_ghost_09
+    16: friend_ghost_10
+    17: friend_ghost_11
+    18: friend_ghost_12
+    19: friend_ghost_13
+    20: friend_ghost_14
+    21: friend_ghost_15
+    22: friend_ghost_16
+    23: friend_ghost_17
+    24: friend_ghost_18
+    25: friend_ghost_19
+    26: friend_ghost_20
+    27: friend_ghost_21
+    28: friend_ghost_22
+    29: friend_ghost_23
+    30: friend_ghost_24
+    31: friend_ghost_25
+    32: friend_ghost_26
+    33: friend_ghost_27
+    34: friend_ghost_28
+    35: friend_ghost_29
+    36: friend_ghost_30
     37: normal_staff_ghost
     38: expert_staff_ghost
