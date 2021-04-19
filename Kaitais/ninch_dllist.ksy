@@ -170,12 +170,13 @@ types:
     seq:
       - id: rating_id
         type: u1
-      - id: unknown
+      - id: rating_group
         type: u1
+        enum: rating_group
       - id: age
         type: u1
         doc: Required years of age.
-      - id: unknown2
+      - id: unknown
         type: u1
       - id: jpeg_offset
         type: u4
@@ -230,6 +231,7 @@ types:
         type: u1
         repeat: expr
         repeat-expr: 3
+        enum: genre
       - id: company_offset
         type: u4
       - id: release_date_year
@@ -422,3 +424,31 @@ types:
         type: str
         encoding: utf-16be
         size: 204
+enums:
+  genre:
+    1: action
+    2: adventure
+    3: life_training
+    4: sports
+    5: puzzles
+    6: role_playing
+    7: racing
+    8: strategy
+    9: simulation
+    10: music_rhythm
+    11: board_game
+    12: shooter
+    13: other
+    14: fighting
+    15: arcade
+    16: import
+  rating_group:
+    1: cero
+    2: esrb
+    3: usk
+    4: pegi
+    5: pegi_fin
+    6: pegi_por
+    7: bbfc
+    8: oflc_agcb
+    9: oflc_nz
