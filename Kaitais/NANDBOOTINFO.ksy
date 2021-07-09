@@ -1,5 +1,5 @@
 meta:
-  id: NANDBOOTINFO
+  id: nandbootinfo
   endian: be
 seq:
   - id: checksum
