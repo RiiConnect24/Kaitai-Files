@@ -8,7 +8,7 @@ meta:
 seq:
   - id: invalid
     type: b1
-  - id: gender
+  - id: is_girl
     type: b1
   - id: birth_month
     type: b4
@@ -30,10 +30,8 @@ seq:
     type: u1
     repeat: expr
     repeat-expr: 4
-  - id: client_id
-    type: u1
-    repeat: expr
-    repeat-expr: 4
+  - id: mac_address
+    type: mac_address
   - id: face_type
     type: b3
   - id: face_color
@@ -140,3 +138,14 @@ seq:
     type: str
     size: 20
     encoding: utf-16be
+    
+types:
+  mac_address:
+    seq:
+      - id: checksum
+        type: u1
+        doc: The checksum is found by getting the sum of the first 3 bytes of the mac address, then modulo by 256.
+      - id: remaining_bytes
+        type: u1
+        repeat: expr
+        repeat-expr: 3
