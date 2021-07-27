@@ -30,8 +30,14 @@ seq:
     type: u4
   - id: group_id
     type: u2
+  - id: zero
+    type: u2 
+  - id: region_flag
+    type: u2
+    enum: region
+    doc: Which region this title can be launched on.
   - id: reserved
-    size: 62
+    size: 60
   - id: access_rights
     type: u4
     doc: Flags for DVD video access and full PPC hardware access.
@@ -60,3 +66,11 @@ types:
         type: u8
       - id: sha1_hash
         size: 20
+        
+enums:
+  region:
+    0: japan
+    1: usa
+    2: pal
+    3: region_free
+    4: korea
