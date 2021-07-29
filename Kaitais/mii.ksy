@@ -26,10 +26,8 @@ seq:
     type: u1
   - id: body_weight
     type: u1
-  - id: avatar_id
-    type: u1
-    repeat: expr
-    repeat-expr: 4
+  - id: mii_id
+    type: mii_id
   - id: mac_address
     type: mac_address
   - id: face_type
@@ -149,3 +147,13 @@ types:
         type: u1
         repeat: expr
         repeat-expr: 3
+  mii_id:
+    seq:
+      - id: mii_info
+        type: u1
+        doc: According to HEYimHeroic, the first char is just information about the Mii. The second is apart of the timestamp.
+      - id: timestamp
+        type: u1
+        repeat: expr
+        repeat-expr: 3
+        doc: According to HEYimHeroic, these bytes are a timestamp of sorts, that can return the date it was created.
