@@ -36,6 +36,7 @@ seq:
     type: u4
   - id: status
     type: u1
+    enum: status
   - id: worldwide
     type: u1
   - id: padding4
@@ -54,3 +55,8 @@ seq:
     type: str
     size: 64
     encoding: utf-8
+enums:
+  status:
+    2: open
+    8: judging
+    32: results
