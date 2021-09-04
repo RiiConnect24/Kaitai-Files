@@ -7,7 +7,6 @@ seq:
   - id: type
     type: str
     size: 2
-    contents: "PL"
     encoding: ascii
   - id: padding1
     size: 2
@@ -16,27 +15,42 @@ seq:
   - id: id2
     type: u4
   - id: padding2
-    size: 12
-  - id: padding3
     size: 8
+  - id: start
+    type: u4
+    doc: Timestamp, seconds since 2000.
+  - id: end
+    type: u4
+    doc: Timestamp, seconds since 2000.
+  - id: padding3
+    size: 4
   - id: tag
     type: str 
     size: 2
-    contents: "PL"
     encoding: ascii
   - id: tag_size
     type: u2
-  - id: active_contest
+  - id: id3
     type: u4
-  - id: endtime
+  - id: contest_id
     type: u4
-  - id: flags
+  - id: status
+    type: u1
+  - id: worldwide
+    type: u1
+  - id: padding4
+    type: u2
+  - id: entry_count
     type: u4
-  - id: unk4
+  - id: padding5
     type: u4
-  - id: unk5
-    type: u4
-  - id: unk6
-    type: u4
-  - id: unk7
-    type: u4
+    repeat: expr
+    repeat-expr: 5
+  - id: topic
+    type: str
+    size: 32
+    encoding: utf-8
+  - id: description
+    type: str
+    size: 64
+    encoding: utf-8
