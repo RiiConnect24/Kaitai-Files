@@ -37,8 +37,18 @@ seq:
   - id: status
     type: u1
     enum: status
+  - id: unused
+    type: b3
+  - id: special_award
+    type: b1
+  - id: nickname_changing
+    type: b1
+  - id: souvenir_photo
+    type: b1
+  - id: thumbnail
+    type: b1
   - id: worldwide
-    type: u1
+    type: b1
   - id: padding4
     type: u2
   - id: entry_count

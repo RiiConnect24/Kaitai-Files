@@ -9,20 +9,18 @@ meta:
 seq:
   - id: header
     type: header
-  - id: number
-    type: number
-    doc: Mii number.
+  - id: mii_number
+    type: mii_number
   - id: mii_data
     type: mii_data
     repeat: expr
-    repeat-expr: number.mii_count
+    repeat-expr: mii_number.mii_count
 types:
   header:
     seq:
       - id: type
-        type: str
-        size: 2
-        encoding: ascii
+        type: u2
+        enum: type
       - id: padding1
         size: 2
       - id: country_code
@@ -41,7 +39,7 @@ types:
       - id: mii_artisan
         type: mii_artisan
         doc: Mii Artisan data.
-  number:
+  mii_number:
     seq:
       - id: tag
         type: str
@@ -134,3 +132,14 @@ enums:
     26: has_4_5_stars
     27: has_4_5_stars
     28: has_5_stars
+  type:
+    0x424c: bl_best_list
+    0x494c: il_special_list
+    0x4c4c: ll_select_list
+    0x4e4c: nl_new_list
+    0x4e53: ns_namesearch
+    0x4f53: os_ownsearch
+    0x504c: pl_pop_list
+    0x524c: rl_bargain_list
+    0x534c: sl_spot_list
+    0x5352: sr_search
