@@ -25,8 +25,9 @@ types:
         size: 2
       - id: country_code
         type: u4
-      - id: padding2
-        size: 4
+      - id: list_number
+        type: u4
+        doc: Only used on bargain_list and new_list.
       - id: error_code
         type: u4
       - id: padding3
@@ -52,7 +53,7 @@ types:
         type: u4
       - id: mii_count
         type: u4
-        doc: How many miis are being displayed in total. Maximum 500.
+        doc: How many Miis are being displayed in total. Maximum 500.
   mii:
     seq:
       - id: tag
