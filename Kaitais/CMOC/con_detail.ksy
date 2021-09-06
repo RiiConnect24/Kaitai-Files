@@ -34,10 +34,23 @@ seq:
     type: u4
   - id: contest_id
     type: u4
-  - id: status
-    type: u1
-    enum: status
   - id: unused
+    type: b1
+  - id: cancelled
+    type: b1
+  - id: results
+    type: b1
+  - id: preparing_results
+    type: b1
+  - id: judging
+    type: b1
+  - id: preparing_for_judging
+    type: b1
+  - id: open
+    type: b1
+  - id: new
+    type: b1
+  - id: unused2
     type: b3
   - id: special_award
     type: b1
@@ -65,8 +78,3 @@ seq:
     type: str
     size: 64
     encoding: utf-8
-enums:
-  status:
-    2: open
-    8: judging
-    32: results
