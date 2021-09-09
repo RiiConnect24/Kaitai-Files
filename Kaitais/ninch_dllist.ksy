@@ -245,10 +245,183 @@ types:
         doc: Null when there's no release date.
       - id: rating_id
         type: u1
-      - id: unknown_4
+      - id: unknown_1
         type: u1
         repeat: expr
-        repeat-expr: 29
+        repeat-expr: 2
+      - id: unknown_2
+        type: b1
+      - id: casual_hardcore_1
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_3
+        type: b1
+      - id: casual_hardcore_2
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_4
+        type: b1
+      - id: casual_hardcore_3
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_5
+        type: b1
+      - id: casual_hardcore_4
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_6
+        type: b1
+      - id: casual_hardcore_5
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_7
+        type: b1
+      - id: casual_hardcore_6
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_8
+        type: b1
+      - id: casual_hardcore_7
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_9
+        type: b1
+      - id: casual_hardcore_8
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_10
+        type: b1
+      - id: casual_hardcore_9
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_11
+        type: b1
+      - id: casual_hardcore_10
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_12
+        type: b1
+      - id: casual_hardcore_11
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_13
+        type: b1
+      - id: casual_hardcore_12
+        type: b1
+        enum: casual_hardcore
+      - id: unknown_14
+        type: b7
+      - id: casual_hardcore_all_ages_and_genders
+        type: b1
+        enum: casual_hardcore
+      - id: everyone_gamers_1
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_1
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_2
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_2
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_3
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_3
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_4
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_4
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_5
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_5
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_6
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_6
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_7
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_7
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_8
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_8
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_9
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_9
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_10
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_10
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_11
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_11
+        type: b1
+        enum: alone_with_friends
+      - id: everyone_gamers_12
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_12
+        type: b1
+        enum: alone_with_friends
+      - id: unknown_15
+        type: b6
+      - id: everyone_gamers_all_ages_and_genders
+        type: b1
+        enum: everyone_gamers
+      - id: alone_with_friends_all_ages_and_genders
+        type: b1
+        enum: alone_with_friends
+      - id: unknown_16
+        type: u1
+        repeat: expr
+        repeat-expr: 7
+      - id: unknown_17
+        type: b5
+      - id: online
+        type: b1
+        enum: yes_no
+      - id: video_flag
+        type: b1
+        enum: yes_no
+      - id: multiplayer
+        type: b1
+        enum: yes_no
+      - id: unknown_18
+        type: u1
+        repeat: expr
+        repeat-expr: 8
+      - id: unknown_19
+        type: b5
+      - id: medal
+        type: b3
+        enum: medal
+      - id: unknown_20
+        type: u1
+        repeat: expr
+        repeat-expr: 2
       - id: title
         type: str
         encoding: utf-16be
@@ -452,3 +625,21 @@ enums:
     7: bbfc
     8: oflc_agcb
     9: oflc_nz
+  casual_hardcore:
+    0: hardcore
+    1: casual
+  everyone_gamers:
+    0: gamers
+    1: everyone
+  alone_with_friends:
+    0: with_friends
+    1: alone
+  medal:
+    0: none
+    1: bronze
+    2: silver
+    3: gold
+    4: platinum
+  yes_no:
+    0: yes
+    1: no
