@@ -614,7 +614,7 @@ enums:
     13: other
     14: fighting
     15: arcade
-    16: import
+    16: imports
   rating_group:
     1: cero
     2: esrb
