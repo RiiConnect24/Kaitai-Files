@@ -2,6 +2,7 @@ meta:
   id: tmd
   file-extension: tmd
   endian: be
+
 seq:
   - id: signature_type
     type: u4
@@ -19,7 +20,7 @@ seq:
     type: u1
   - id: signer_crl_version
     type: u1
-  - id: padding_modulo_64_2
+  - id: is_vwii
     type: u1
   - id: system_version
     type: u8
@@ -37,7 +38,7 @@ seq:
     enum: region
     doc: Which region this title can be launched on.
   - id: reserved
-    size: 60
+    size: 58
   - id: access_rights
     type: u4
     doc: Flags for DVD video access and full PPC hardware access.
@@ -53,6 +54,7 @@ seq:
     type: content
     repeat: expr
     repeat-expr: number_of_contents
+
 types:
   content:
     seq:
