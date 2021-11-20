@@ -70,10 +70,11 @@ types:
             "'KI'": keyframe_index
             "'PÆ'": audio_chunk_standard
         doc: |
+          A0 -> None
           A2 -> FastAudio
-          A3 -> FastAudio
+          A3 -> FastAudio Stereo
           A8 -> ADPCM
-          A9 -> ADPCM
+          A9 -> ADPCM Stereo
           AM -> Multitrack
           AP -> PCM
           AV -> Vorbis
