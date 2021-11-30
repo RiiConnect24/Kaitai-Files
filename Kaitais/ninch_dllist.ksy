@@ -229,6 +229,7 @@ types:
         size: 4
       - id: title_type
         type: u1
+        enum: platforms
       - id: genre
         type: u1
         repeat: expr
@@ -645,3 +646,26 @@ enums:
   yes_no:
     0: yes
     1: no
+  platforms:
+    0: none
+    1: wii
+    2: wii_channels
+    3: nes
+    4: snes
+    5: n64
+    6: tg16
+    7: genesis
+    8: neogeo
+    9: none
+    10: ds
+    11: wiiware
+    12: master
+    13: c64
+    14: arcade
+    15: ds
+    16: dsi
+    17: dsiware
+    18: threeds
+    19: threeds_download
+    20: threeds_gameboy
+    21: none
