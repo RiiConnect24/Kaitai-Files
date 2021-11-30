@@ -28,7 +28,7 @@ seq:
 types:
   jpegs_table:
     seq:
-     - id: file_size
+     - id: jpeg_size
        type: u4
        doc: The size of the jpeg
      - id: jpeg_offset
