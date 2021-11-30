@@ -103,6 +103,8 @@ seq:
     size: 256
     encoding: utf-8
     doc: Part of the path in the URL for the Nintendo Channel files.
+  - id: unknown_10
+    type: u4
 instances:
   ratings_table:
     pos: ratings_table_offset
