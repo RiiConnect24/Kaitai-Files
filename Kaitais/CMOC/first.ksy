@@ -52,3 +52,5 @@ seq:
     type: b1
   - id: number_info_2
     type: b1
+  - id: unk6
+    type: u2
