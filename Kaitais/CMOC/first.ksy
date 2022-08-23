@@ -53,4 +53,20 @@ seq:
   - id: show_popular_mii_count
     type: b1
   - id: unk6
-    type: u2
+    type: u1
+  - id: unk7
+    type: b1
+  - id: message_service_language_dutch
+    type: b1
+  - id: message_service_language_italian
+    type: b1
+  - id: message_service_language_spanish
+    type: b1
+  - id: message_service_language_french
+    type: b1
+  - id: message_service_language_german
+    type: b1
+  - id: message_service_language_english
+    type: b1
+  - id: message_service_language_japanese
+    type: b1
