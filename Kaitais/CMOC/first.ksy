@@ -38,5 +38,17 @@ seq:
     type: u4
   - id: unk4
     type: u4
+  - id: country_group
+    type: u1
   - id: unk5
-    type: u4
+    type: b3
+  - id: reenable_initials
+    type: b1
+  - id: disable_initials
+    type: b1
+  - id: show_mii_contest_submissions_count
+    type: b1
+  - id: number_info_1
+    type: b1
+  - id: number_info_2
+    type: b1
