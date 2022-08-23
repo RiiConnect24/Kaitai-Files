@@ -42,15 +42,15 @@ seq:
     type: u1
   - id: unk5
     type: b3
+  - id: enable_scrolling_marquee
+    type: b1
   - id: reenable_initials
     type: b1
   - id: disable_initials
     type: b1
-  - id: show_mii_contest_submissions_count
+  - id: show_mii_artisan_count
     type: b1
-  - id: number_info_1
-    type: b1
-  - id: number_info_2
+  - id: show_popular_mii_count
     type: b1
   - id: unk6
     type: u2
