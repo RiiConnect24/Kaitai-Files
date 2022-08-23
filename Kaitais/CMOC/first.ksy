@@ -50,7 +50,7 @@ seq:
     type: b1
   - id: show_mii_artisan_count
     type: b1
-  - id: show_popular_mii_count
+  - id: show_posting_plaza_mii_count
     type: b1
   - id: unk6
     type: u1
