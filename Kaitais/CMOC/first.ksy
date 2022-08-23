@@ -48,7 +48,7 @@ seq:
     type: b1
   - id: disable_initials
     type: b1
-  - id: show_mii_artisan_count
+  - id: show_mii_artisan_and_contest_mii_count
     type: b1
   - id: show_posting_plaza_mii_count
     type: b1
