@@ -36,8 +36,10 @@ types:
         encoding: utf-8
       - id: country_code
         type: u1
-      - id: unknown
-        size: 12
+      - id: padding
+        size: 4
+      - id: mii_entry_number
+        type: u8
       - id: actual_mii
         size: 74
       - id: mii_crc16
