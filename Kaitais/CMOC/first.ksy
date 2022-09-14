@@ -1,42 +1,32 @@
 meta:
   id: first
   file-extension:
-    - ces
+    - dec
   endian: be
 seq:
   - id: type
     type: str
     size: 2
-    contents: "FD"
     encoding: ascii
   - id: padding1
     size: 2
   - id: id1
-    type: u4
+    type: u1
   - id: id2
-    type: u4
+    type: u2
+  - id: country_code
+    type: u1
   - id: padding2
-    size: 12
+    size: 16
   - id: padding3
     size: 8
   - id: tag
     type: str
     size: 2
-    contents: "FD"
     encoding: ascii
   - id: tag_size
     type: u2
-  - id: availableinregionflag1
-    type: u4
-  - id: availableinregionflag2
-    type: u4
-  - id: unk1
-    type: u4
-  - id: unk2
-    type: u4
-  - id: unk3
-    type: u4
-  - id: unk4
+  - id: unk8
     type: u4
   - id: country_group
     type: u1
