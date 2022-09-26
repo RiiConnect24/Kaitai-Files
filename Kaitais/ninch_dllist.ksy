@@ -460,10 +460,13 @@ types:
       - id: title_id
         type: u4
         doc: The associated title entry's ID.
+      - id: video_type
+        type: u1
+        enum: video_type
       - id: unknown
         type: u1
         repeat: expr
-        repeat-expr: 15
+        repeat-expr: 14
       - id: unknown_2
         type: u1
       - id: rating_id
@@ -656,16 +659,24 @@ enums:
     6: tg16
     7: genesis
     8: neogeo
-    9: none
     10: ds
     11: wiiware
     12: master
     13: c64
     14: arcade
-    15: ds
     16: dsi
     17: dsiware
     18: threeds
     19: threeds_download
     20: threeds_gameboy
-    21: none
+  video_type:
+    0: none
+    1: wii
+    2: wiiware
+    3: wii_virtual_console
+    4: ds
+    5: dsi
+    6: dsiware
+    7: message
+    8: threeds
+    10: threeds_virtual_console
